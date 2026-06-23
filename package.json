@@ -1,0 +1,17 @@
+{
+  "name": "vpn-auth-templates",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "build": "tailwindcss -i ./src/css/input.css -o ./src/css/output.css --minify",
+    "dev": "tailwindcss -i ./src/css/input.css -o ./src/css/output.css --watch",
+    "verify:render": "node ./scripts/verify-render.js"
+  },
+  "dependencies": {
+    "@tailwindcss/cli": "^4.3.1",
+    "tailwindcss": "^4.3.1"
+  },
+  "devDependencies": {
+    "playwright": "^1.61.0"
+  }
+}

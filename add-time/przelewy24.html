@@ -1,0 +1,416 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>WEB3 VPN Add Time</title>
+  <base href="../" />
+  <link rel="stylesheet" href="./src/css/output.css" />
+  <script src="./src/js/main.js" defer></script>
+  <script src="./src/js/add-time.js" defer></script>
+</head>
+
+<body data-auth-current="add-time" data-addtime-method="przelewy24">
+  <header class="sticky top-0 z-40 flex w-full items-center gap-5 bg-auth-header-footer px-5 py-3.25 xl:gap-6 xl:px-8"
+    aria-label="Main header">
+    <div class="hidden items-center w-full max-w-152.5 justify-between xl:flex">
+      <a class="shrink-0" href="#" aria-label="WEB3 VPN home">
+        <img src="./img/header-img/logo.svg" width="140" height="32" alt="WEB3 VPN" />
+      </a>
+      <nav class="w-full max-w-97.5 flex items-center justify-between text-sm font-semibold leading-normal text-white"
+        aria-label="Primary navigation">
+        <a class="inline-flex h-8 items-center justify-center px-1 transition-colors duration-200 hover:text-auth-brand-hover active:text-auth-brand-pressed data-[loading=true]:text-white"
+          href="#" data-demo-loading>
+          <span data-link-text>VPN</span>
+        </a>
+        <a class="inline-flex h-8 items-center justify-center px-1 capitalize transition-colors duration-200 hover:text-auth-brand-hover active:text-auth-brand-pressed data-[loading=true]:text-white"
+          href="#" data-demo-loading>
+          <span data-link-text>Browser</span>
+        </a>
+        <a class="inline-flex h-8 items-center justify-center px-1 capitalize transition-colors duration-200 hover:text-auth-brand-hover active:text-auth-brand-pressed data-[loading=true]:text-white"
+          href="#" data-demo-loading>
+          <span data-link-text>Pricing</span>
+        </a>
+        <a class="inline-flex h-8 items-center justify-center px-1 capitalize transition-colors duration-200 hover:text-auth-brand-hover active:text-auth-brand-pressed data-[loading=true]:text-white"
+          href="#" data-demo-loading>
+          <span data-link-text>Downloads</span>
+        </a>
+        <a class="inline-flex h-8 items-center justify-center px-1 capitalize transition-colors duration-200 hover:text-auth-brand-hover active:text-auth-brand-pressed data-[loading=true]:text-white"
+          href="#" data-demo-loading>
+          <span data-link-text>Privacy</span>
+        </a>
+      </nav>
+    </div>
+
+    <button class="inline-flex min-w-[32px] cursor-pointer items-center justify-center xl:hidden" type="button"
+      aria-label="Open navigation menu" aria-expanded="false" aria-controls="mobile-menu" data-mobile-menu-button>
+      <img src="./img/header-img/mobileMenu-icon.svg" width="32" height="32" alt="" aria-hidden="true" />
+    </button>
+
+    <a class="shrink-0 xl:hidden" href="#" aria-label="WEB3 VPN home">
+      <img src="./img/header-img/logo.svg" width="140" height="32" alt="WEB3 VPN"
+        class="w-[126px] min-[390px]:w-[140px]" />
+    </a>
+
+    <div class="ml-auto hidden items-center gap-6 xl:flex">
+      <label
+        class="flex h-11 w-75 items-center gap-3 rounded-full border border-transparent bg-auth-bg-secondary px-5 text-[13px] text-auth-secondary transition-[background-color,border-color] focus-within:border-auth-brand">
+        <img src="./img/header-img/search-icon.svg" width="16" height="16" alt="" aria-hidden="true" />
+        <span class="sr-only">Search</span>
+        <input
+          class="min-w-0 flex-1 bg-transparent text-[13px] text-white caret-auth-brand placeholder:text-auth-secondary focus:outline-none"
+          type="search" placeholder="Search..." />
+      </label>
+      <div class="gap-4 flex">
+        <button
+          class="inline-flex h-11 w-26.25 shrink-0 cursor-pointer items-center justify-center gap-2 overflow-hidden rounded-lg bg-auth-brand px-4 text-sm font-semibold capitalize leading-normal text-white transition-[background-color,width,color] duration-200 hover:bg-auth-brand-hover active:bg-auth-brand-pressed disabled:cursor-not-allowed disabled:bg-[rgb(38_143_108_/_0.3)] disabled:text-white/30 data-[loading=true]:w-[68px] data-[loading=true]:px-0"
+          type="button" data-demo-loading>
+          <span data-button-text>Account</span>
+          <img class="hidden size-5 animate-spin" src="./img/loading-icon.svg" width="20" height="20" alt=""
+            aria-hidden="true" data-button-loader />
+        </button>
+        <button
+          class="inline-flex h-11 w-25.5 shrink-0 cursor-pointer items-center justify-center gap-2 overflow-hidden rounded-lg bg-[#353c44] px-4 text-sm font-semibold capitalize leading-normal text-white transition-[background-color,width,color] duration-200 hover:bg-[#434f5e] active:bg-[#2b343d] disabled:cursor-not-allowed disabled:bg-[#2c3139] disabled:text-white/40 data-[loading=true]:w-[68px] data-[loading=true]:px-0"
+          type="button" data-logout>
+          <span data-button-text>Log Out</span>
+          <img class="hidden size-5 animate-spin" src="./img/loading-icon.svg" width="20" height="20" alt=""
+            aria-hidden="true" data-button-loader />
+        </button>
+      </div>
+    </div>
+
+    <div class="ml-auto flex items-center gap-5.5 xl:hidden">
+      <button
+        class="inline-flex h-11 w-14 cursor-pointer items-center justify-center overflow-hidden rounded-lg bg-[#353c44] transition-[background-color,width] duration-200 hover:bg-[#434f5e] active:bg-[#2b343d] data-[loading=true]:w-[68px]"
+        type="button" aria-label="Log out" data-logout>
+        <span data-button-text>
+          <img src="./img/header-img/phoneVersion-logOut-headerBtn-icon.svg" width="24" height="24" alt=""
+            aria-hidden="true" />
+        </span>
+        <img class="hidden size-5 animate-spin" src="./img/loading-icon.svg" width="20" height="20" alt=""
+          aria-hidden="true" data-button-loader />
+      </button>
+      <button
+        class="inline-flex h-11 w-16 cursor-pointer items-center justify-center overflow-hidden rounded-lg bg-auth-brand transition-[background-color,width] duration-200 hover:bg-auth-brand-hover active:bg-auth-brand-pressed data-[loading=true]:w-[68px]"
+        type="button" aria-label="Account" data-demo-loading>
+        <span data-button-text>
+          <img src="./img/header-img/phoneVersion-Account-headerBtn-icon.svg" width="32" height="32" alt=""
+            aria-hidden="true" />
+        </span>
+        <img class="hidden size-5 animate-spin" src="./img/loading-icon.svg" width="20" height="20" alt=""
+          aria-hidden="true" data-button-loader />
+      </button>
+    </div>
+  </header>
+
+  <div id="mobile-menu"
+    class="group pointer-events-none fixed inset-0 z-50 bg-auth-bg-primary/88 opacity-0 transition-opacity duration-200 ease-out data-[state=open]:pointer-events-auto data-[state=open]:opacity-100 motion-reduce:transition-none xl:hidden"
+    hidden aria-hidden="true" data-state="closed" data-mobile-menu>
+    <div
+      class="absolute inset-y-0 left-0 w-75 max-w-[calc(100vw-88px)] -translate-x-full overflow-y-auto overscroll-contain bg-auth-header-footer px-8 pt-9.75 pb-8 text-white transition-transform duration-300 ease-out group-data-[state=open]:translate-x-0 motion-reduce:transition-none"
+      role="dialog" aria-modal="true" aria-label="Main menu">
+      <div class="flex items-center justify-between">
+        <p class="text-[10px] font-semibold uppercase leading-normal text-auth-secondary">MAIN MANU</p>
+        <button class="-mr-1 inline-flex size-8 cursor-pointer items-center justify-center" type="button"
+          aria-label="Close navigation menu" data-mobile-menu-close>
+          <img src="./img/header-img/mobileMenu-close-icon.svg" width="32" height="32" alt="" aria-hidden="true" />
+        </button>
+      </div>
+
+      <nav class="mt-9 flex flex-col gap-10 text-sm font-semibold leading-normal text-white"
+        aria-label="Mobile navigation">
+        <a class="uppercase transition-colors hover:text-auth-secondary active:text-auth-brand" href="#"
+          data-mobile-menu-link>VPN</a>
+        <a class="transition-colors hover:text-auth-secondary active:text-auth-brand" href="#"
+          data-mobile-menu-link>Browser</a>
+        <a class="transition-colors hover:text-auth-secondary active:text-auth-brand" href="#"
+          data-mobile-menu-link>Pricing</a>
+        <a class="transition-colors hover:text-auth-secondary active:text-auth-brand" href="#"
+          data-mobile-menu-link>Downloads</a>
+        <a class="transition-colors hover:text-auth-secondary active:text-auth-brand" href="#"
+          data-mobile-menu-link>Privacy</a>
+      </nav>
+
+      <section class="mt-12 ml-2" aria-labelledby="mobile-policies-title">
+        <h2 id="mobile-policies-title" class="text-[10px] font-semibold uppercase leading-normal text-auth-secondary">
+          POLICIES</h2>
+        <nav class="mt-10 flex flex-col gap-10 text-sm font-semibold leading-normal text-white"
+          aria-label="Mobile policies navigation">
+          <a class="transition-colors hover:text-auth-secondary active:text-auth-brand" href="#"
+            data-mobile-menu-link>Policies</a>
+          <a class="transition-colors hover:text-auth-secondary active:text-auth-brand" href="#"
+            data-mobile-menu-link>Privacy Policy</a>
+          <a class="transition-colors hover:text-auth-secondary active:text-auth-brand" href="#"
+            data-mobile-menu-link>Cookies</a>
+          <a class="transition-colors hover:text-auth-secondary active:text-auth-brand" href="#"
+            data-mobile-menu-link>Terms Of Service</a>
+        </nav>
+      </section>
+    </div>
+  </div>
+
+  <div class="flex min-h-[calc(100vh-70px)] flex-col bg-auth-bg-primary">
+    <main class="flex w-full flex-1 bg-auth-bg-primary lg:min-h-[803px]">
+      <section class="w-full" aria-labelledby="przelewy24-title" data-add-time-page data-addtime-payment-page>
+        <div class="grid lg:min-h-full lg:grid-cols-[280px_minmax(0,1fr)]">
+          <aside class="hidden bg-auth-bg-secondary px-5 py-8 lg:block" aria-label="Account navigation">
+            <div class="rounded-xl bg-auth-input p-4">
+              <p class="text-[10px] font-semibold uppercase leading-normal text-auth-secondary">PAID UNTIL</p>
+              <p class="mt-1 text-[13px] font-semibold leading-normal text-white">25/06/2026 20:34</p>
+            </div>
+
+            <nav class="mt-8 flex flex-col" aria-label="Account menu">
+              <p class="mb-6 px-3 text-[10px] font-semibold uppercase leading-normal text-auth-secondary">ACCOUNT
+                MANAGEMENT</p>
+              <a class="flex h-10 items-center gap-3 rounded-lg bg-auth-aside-active px-3 text-sm font-medium leading-normal text-white"
+                href="./add-time/index.html" aria-current="page">
+                <img src="./img/aside-img/addTime-icon.svg" width="16" height="16" alt="" aria-hidden="true" />
+                Add Time
+              </a>
+              <a class="mt-1 flex h-10 items-center gap-3 rounded-lg px-3 text-sm font-medium leading-normal text-white transition-colors hover:bg-auth-input active:bg-auth-brand-pressed"
+                href="./devices/index.html">
+                <img src="./img/aside-img/devices-icon.svg" width="16" height="16" alt="" aria-hidden="true" />
+                Devices
+              </a>
+              <a class="mt-1 flex h-10 items-center gap-3 rounded-lg px-3 text-sm font-medium leading-normal text-white transition-colors hover:bg-auth-input active:bg-auth-brand-pressed"
+                href="./request-a-receipt/index.html">
+                <img src="./img/aside-img/requestAReceipt-icon.svg" width="16" height="16" alt="" aria-hidden="true" />
+                Request A Receipt
+              </a>
+
+              <p class="mb-6 mt-17.5 px-3 text-[10px] font-semibold uppercase leading-normal text-auth-secondary">
+                DOWNLOADS</p>
+              <a class="flex h-10 items-center gap-3 rounded-lg px-3 text-sm font-medium leading-normal text-white transition-colors hover:bg-auth-input active:bg-auth-brand-pressed"
+                href="./downloads/index.html">
+                <img src="./img/aside-img/downloads-icon.svg" width="16" height="16" alt="" aria-hidden="true" />
+                Downloads
+              </a>
+              <a class="mt-1 flex h-10 items-center gap-3 rounded-lg px-3 text-sm font-medium leading-normal text-white transition-colors hover:bg-auth-input active:bg-auth-brand-pressed"
+                href="./wire-guard-configuration/index.html">
+                <img src="./img/aside-img/wireGuardConfiguration-icon.svg" width="16" height="16" alt=""
+                  aria-hidden="true" />
+                WireGuard Configuration
+              </a>
+
+              <p class="mb-6 mt-17.5 px-3 text-[10px] font-semibold uppercase leading-normal text-auth-secondary">GUIDES
+              </p>
+              <a class="flex h-10 items-center gap-3 rounded-lg px-3 text-sm font-medium leading-normal text-white transition-colors hover:bg-auth-input active:bg-auth-brand-pressed"
+                href="./change-your-online-habits/index.html">
+                <img src="./img/aside-img/changeYourOnlineHabits-icon.svg" width="16" height="16" alt=""
+                  aria-hidden="true" />
+                Change Your Online Habits
+              </a>
+              <a class="mt-1 flex h-10 items-center gap-3 rounded-lg px-3 text-sm font-medium leading-normal text-white transition-colors hover:bg-auth-input active:bg-auth-brand-pressed"
+                href="./recover-lost-account-credit-card/index.html">
+                <img src="./img/aside-img/recoverLostAccount.svg" width="16" height="16" alt="" aria-hidden="true" />
+                Recover Lost Account
+              </a>
+            </nav>
+          </aside>
+
+          <div class="px-5 py-10 lg:px-8 lg:py-8">
+<div class="w-full">
+            <nav class="flex items-center gap-2 text-xs leading-normal text-auth-secondary" aria-label="Breadcrumb">
+              <a class="transition-colors hover:text-auth-brand-hover active:text-auth-brand-pressed" href="./add-time/index.html">Add time</a>
+              <span>/</span>
+              <span class="text-white">Pay With Przelewy24</span>
+            </nav>
+            <h1 id="przelewy24-title" class="mt-2 text-2xl font-medium capitalize leading-normal text-white">Pay With Przelewy24</h1>
+            <p class="mt-5 text-sm leading-normal text-white">Choose the amount of VPN time you'd like to purchase.</p>
+            <form class="mt-5" data-simple-payment-form>
+              <div class="w-full lg:max-w-195 flex justify-between flex-wrap gap-5 lg:gap-10">
+                <label class="w-full lg:max-w-92.5 relative flex flex-col gap-3">
+                <span class="text-[10px] font-semibold uppercase leading-normal text-auth-secondary">SELECT NUMBER OF MONTHS</span>
+                <div class="relative w-full" data-custom-select data-open="false" data-page-select>
+                  <button
+                    class="flex h-11 w-full cursor-pointer items-center justify-between gap-2.5 rounded-xl border border-transparent bg-auth-bg-secondary px-5 py-[13.5px] text-sm leading-normal text-white transition-[background-color,border-color] active:bg-auth-input data-[open=true]:border-auth-brand data-[open=true]:bg-auth-input"
+                    type="button" aria-haspopup="listbox" aria-expanded="false" data-select-button data-open="false">
+                    <span data-select-value>1 month (50 SEC)</span>
+                    <img class="size-4 transition-transform duration-200 data-[open=true]:rotate-180"
+                      src="./img/selection-arrow-icon.svg" width="16" height="16" alt="" aria-hidden="true"
+                      data-select-arrow />
+                  </button>
+                  <div
+                    class="absolute left-0 top-[calc(100%+8px)] z-50 w-full overflow-hidden rounded-xl bg-auth-bg-secondary p-1 shadow-2xl"
+                    hidden role="listbox" data-select-menu>
+                  <button
+                    class="flex w-full cursor-pointer rounded-lg px-3 py-2 text-left text-sm text-white transition-colors hover:bg-auth-input aria-selected:bg-auth-brand"
+                    type="button" role="option" aria-selected="true" data-selected="true"
+                    data-select-option>1 month (50 SEC)</button>
+                  </div>
+                </div>
+              </label>
+<label class="w-full lg:max-w-92.5 flex flex-col gap-3">
+                <span class="text-[10px] font-semibold uppercase leading-normal text-auth-secondary">EMAIL</span>
+                <input class="h-11 w-full rounded-lg border border-transparent bg-auth-bg-secondary px-5 text-sm leading-normal text-white outline-none transition-[background-color,border-color] placeholder:text-auth-secondary hover:border-white/10 focus:border-auth-brand disabled:cursor-not-allowed disabled:bg-auth-input-muted disabled:text-white/30" type="email" placeholder="Email" autocomplete="email" />
+              </label>
+              </div>
+              <p class="mt-5 text-sm leading-normal text-white">You&rsquo;ll be redirected to the banking site to complete your payment.</p>
+              <div class="mt-5"><button class="inline-flex h-11 cursor-pointer items-center justify-center gap-2 rounded-lg bg-auth-brand px-6 text-sm font-semibold leading-normal text-white transition-[background-color,width] duration-200 hover:bg-auth-brand-hover active:bg-auth-brand-pressed disabled:cursor-not-allowed disabled:bg-[rgba(38,143,108,0.3)] disabled:text-white/30 data-[loading=true]:w-[68px] data-[loading=true]:px-0 data-[loading=true]:bg-auth-brand w-full lg:w-24" type="submit" data-payment-button>
+                <span data-button-text>Submit</span>
+                <img class="hidden size-5 animate-spin" src="./img/loading-icon.svg" alt="loading" aria-hidden="true" data-button-loader />
+              </button></div>
+            </form>
+            <p class="mt-5 text-sm leading-normal text-white">To provide this service, we use the Stripe payment platform. Learn about user data with third parties in our <a class="text-auth-brand underline underline-offset-2 transition-colors hover:text-auth-brand-hover" href="#">Privacy policy</a>.</p>
+
+          </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="mt-auto w-full bg-auth-header-footer">
+      <div
+        class="flex flex-col items-center border-t-2 border-auth-brand px-[46.5px] py-15 text-center gap-10 lg:gap-0 lg:px-15 lg:grid lg:grid-cols-4 lg:items-start lg:text-left">
+        <div class="flex flex-col items-center gap-6 lg:items-start">
+          <img src="./img/footer-img/footer-logo.svg" width="163" height="38" alt="WEB3 VPN" />
+          <div class="flex items-center gap-6">
+            <a class="inline-flex size-5 items-center justify-center text-white transition-colors duration-200 hover:text-auth-brand-hover active:text-auth-brand-pressed aria-disabled:text-white/40"
+              href="#" aria-label="Reddit">
+              <svg class="size-5" viewBox="0 0 20 20" fill="none" aria-hidden="true" xmlns="http://www.w3.org/2000/svg">
+                <path fill="currentColor"
+                  d="M10 20C15.5228 20 20 15.5228 20 10C20 4.47715 15.5228 0 10 0C4.47715 0 0 4.47715 0 10C0 15.5228 4.47715 20 10 20Z" />
+                <path fill="currentColor" class="text-auth-header-footer"
+                  d="M16.6706 10.0001C16.6706 9.18869 16.0144 8.54429 15.2148 8.54429C14.8211 8.54429 14.4629 8.69933 14.2005 8.95001C13.1982 8.234 11.8258 7.76866 10.2983 7.70905L10.9665 4.58251L13.1383 5.04784C13.1624 5.59681 13.6157 6.03834 14.1767 6.03834C14.7494 6.03834 15.2148 5.57301 15.2148 5.00002C15.2148 4.42725 14.7494 3.96191 14.1767 3.96191C13.7709 3.96191 13.4128 4.20059 13.2458 4.54669L10.8235 4.03354C10.7518 4.02153 10.6802 4.03354 10.6324 4.06935C10.5728 4.10516 10.537 4.16477 10.5252 4.2364L9.78513 7.72084C8.23387 7.76866 6.83765 8.234 5.82335 8.96203C5.55018 8.70111 5.1868 8.55576 4.80905 8.5563C3.9976 8.5563 3.35321 9.21249 3.35321 10.0121C3.35321 10.6087 3.71111 11.1099 4.21248 11.3367C4.18845 11.4798 4.17666 11.623 4.17666 11.7783C4.17666 14.0215 6.79005 15.8475 10.012 15.8475C13.234 15.8475 15.8474 14.0335 15.8474 11.7783C15.8474 11.635 15.8354 11.4798 15.8116 11.3367C16.3127 11.1099 16.6706 10.5967 16.6706 10.0001ZM6.6706 11.0382C6.6706 10.4655 7.13594 10.0001 7.70893 10.0001C8.2817 10.0001 8.74703 10.4655 8.74703 11.0382C8.74703 11.611 8.2817 12.0766 7.70893 12.0766C7.13594 12.0883 6.6706 11.611 6.6706 11.0382ZM12.4822 13.7949C11.7661 14.5109 10.4057 14.5587 10.012 14.5587C9.6063 14.5587 8.24589 14.4989 7.54166 13.7949C7.43444 13.6874 7.43444 13.5204 7.54166 13.4129C7.64909 13.3057 7.81614 13.3057 7.92358 13.4129C8.37712 13.8665 9.33181 14.0215 10.012 14.0215C10.6922 14.0215 11.6587 13.8665 12.1002 13.4129C12.2077 13.3057 12.3747 13.3057 12.4822 13.4129C12.5776 13.5204 12.5776 13.6874 12.4822 13.7949ZM12.2911 12.0883C11.7183 12.0883 11.253 11.623 11.253 11.0502C11.253 10.4775 11.7183 10.0121 12.2911 10.0121C12.8641 10.0121 13.3294 10.4775 13.3294 11.0502C13.3294 11.611 12.8641 12.0883 12.2911 12.0883Z" />
+              </svg>
+            </a>
+            <a class="inline-flex size-5 items-center justify-center text-white transition-colors duration-200 hover:text-auth-brand-hover active:text-auth-brand-pressed aria-disabled:text-white/40"
+              href="#" aria-label="X">
+              <svg class="size-5" viewBox="0 0 20 20" fill="none" aria-hidden="true" xmlns="http://www.w3.org/2000/svg">
+                <path fill="currentColor"
+                  d="M15.2719 1.58691H18.0831L11.9414 8.60649L19.1667 18.1586H13.5094L9.07837 12.3653L4.0083 18.1586H1.19537L7.76454 10.6503L0.833344 1.58691H6.63427L10.6395 6.88219L15.2719 1.58691ZM14.2853 16.4759H15.843L5.78784 3.18119H4.11623L14.2853 16.4759Z" />
+              </svg>
+            </a>
+            <a class="inline-flex size-5 items-center justify-center text-white transition-colors duration-200 hover:text-auth-brand-hover active:text-auth-brand-pressed aria-disabled:text-white/40"
+              href="#" aria-label="Instagram">
+              <svg class="size-5" viewBox="0 0 20 20" fill="none" aria-hidden="true" xmlns="http://www.w3.org/2000/svg">
+                <path fill="currentColor"
+                  d="M10 1.80078C12.6719 1.80078 12.9883 1.8125 14.0391 1.85937C15.0156 1.90234 15.543 2.06641 15.8945 2.20313C16.3594 2.38281 16.6953 2.60156 17.043 2.94922C17.3945 3.30078 17.6094 3.63281 17.7891 4.09766C17.9258 4.44922 18.0898 4.98047 18.1328 5.95312C18.1797 7.00781 18.1914 7.32422 18.1914 9.99219C18.1914 12.6641 18.1797 12.9805 18.1328 14.0313C18.0898 15.0078 17.9258 15.5352 17.7891 15.8867C17.6094 16.3516 17.3906 16.6875 17.043 17.0352C16.6914 17.3867 16.3594 17.6016 15.8945 17.7813C15.543 17.918 15.0117 18.082 14.0391 18.125C12.9844 18.1719 12.668 18.1836 10 18.1836C7.32813 18.1836 7.01172 18.1719 5.96094 18.125C4.98438 18.082 4.45703 17.918 4.10547 17.7813C3.64063 17.6016 3.30469 17.3828 2.95703 17.0352C2.60547 16.6836 2.39063 16.3516 2.21094 15.8867C2.07422 15.5352 1.91016 15.0039 1.86719 14.0313C1.82031 12.9766 1.80859 12.6602 1.80859 9.99219C1.80859 7.32031 1.82031 7.00391 1.86719 5.95312C1.91016 4.97656 2.07422 4.44922 2.21094 4.09766C2.39063 3.63281 2.60938 3.29688 2.95703 2.94922C3.30859 2.59766 3.64063 2.38281 4.10547 2.20313C4.45703 2.06641 4.98828 1.90234 5.96094 1.85937C7.01172 1.8125 7.32813 1.80078 10 1.80078ZM10 0C7.28516 0 6.94531 0.0117187 5.87891 0.0585938C4.81641 0.105469 4.08594 0.277344 3.45313 0.523438C2.79297 0.78125 2.23438 1.12109 1.67969 1.67969C1.12109 2.23438 0.78125 2.79297 0.523438 3.44922C0.277344 4.08594 0.105469 4.8125 0.0585938 5.875C0.0117188 6.94531 0 7.28516 0 10C0 12.7148 0.0117188 13.0547 0.0585938 14.1211C0.105469 15.1836 0.277344 15.9141 0.523438 16.5469C0.78125 17.207 1.12109 17.7656 1.67969 18.3203C2.23438 18.875 2.79297 19.2188 3.44922 19.4727C4.08594 19.7188 4.8125 19.8906 5.875 19.9375C6.94141 19.9844 7.28125 19.9961 9.99609 19.9961C12.7109 19.9961 13.0508 19.9844 14.1172 19.9375C15.1797 19.8906 15.9102 19.7188 16.543 19.4727C17.1992 19.2188 17.7578 18.875 18.3125 18.3203C18.8672 17.7656 19.2109 17.207 19.4648 16.5508C19.7109 15.9141 19.8828 15.1875 19.9297 14.125C19.9766 13.0586 19.9883 12.7188 19.9883 10.0039C19.9883 7.28906 19.9766 6.94922 19.9297 5.88281C19.8828 4.82031 19.7109 4.08984 19.4648 3.45703C19.2188 2.79297 18.8789 2.23438 18.3203 1.67969C17.7656 1.125 17.207 0.78125 16.5508 0.527344C15.9141 0.28125 15.1875 0.109375 14.125 0.0625C13.0547 0.0117188 12.7148 0 10 0Z" />
+                <path fill="currentColor"
+                  d="M10 4.86328C7.16406 4.86328 4.86328 7.16406 4.86328 10C4.86328 12.8359 7.16406 15.1367 10 15.1367C12.8359 15.1367 15.1367 12.8359 15.1367 10C15.1367 7.16406 12.8359 4.86328 10 4.86328ZM10 13.332C8.16016 13.332 6.66797 11.8398 6.66797 10C6.66797 8.16016 8.16016 6.66797 10 6.66797C11.8398 6.66797 13.332 8.16016 13.332 10C13.332 11.8398 11.8398 13.332 10 13.332Z" />
+                <path fill="currentColor"
+                  d="M16.5391 4.66016C16.5391 5.32422 16 5.85938 15.3398 5.85938C14.6758 5.85938 14.1406 5.32031 14.1406 4.66016C14.1406 3.99609 14.6797 3.46094 15.3398 3.46094C16 3.46094 16.5391 4 16.5391 4.66016Z" />
+              </svg>
+            </a>
+            <a class="inline-flex size-5 items-center justify-center text-white transition-colors duration-200 hover:text-auth-brand-hover active:text-auth-brand-pressed aria-disabled:text-white/40"
+              href="#" aria-label="LinkedIn">
+              <svg class="size-5" viewBox="0 0 20 20" fill="none" aria-hidden="true" xmlns="http://www.w3.org/2000/svg">
+                <path fill="currentColor"
+                  d="M18.5195 0H1.47656C0.660156 0 0 0.644531 0 1.44141V18.5547C0 19.3516 0.660156 20 1.47656 20H18.5195C19.3359 20 20 19.3516 20 18.5586V1.44141C20 0.644531 19.3359 0 18.5195 0ZM5.93359 17.043H2.96484V7.49609H5.93359V17.043ZM4.44922 6.19531C3.49609 6.19531 2.72656 5.42578 2.72656 4.47656C2.72656 3.52734 3.49609 2.75781 4.44922 2.75781C5.39844 2.75781 6.16797 3.52734 6.16797 4.47656C6.16797 5.42188 5.39844 6.19531 4.44922 6.19531ZM17.043 17.043H14.0781V12.4023C14.0781 11.2969 14.0586 9.87109 12.5352 9.87109C10.9922 9.87109 10.7578 11.0781 10.7578 12.3242V17.043H7.79688V7.49609H10.6406V8.80078H10.6797C11.0742 8.05078 12.043 7.25781 13.4844 7.25781C16.4883 7.25781 17.043 9.23438 17.043 11.8047V17.043Z" />
+              </svg>
+            </a>
+          </div>
+        </div>
+
+        <section class="flex flex-col gap-6">
+          <h2 class="text-base font-semibold uppercase leading-normal text-auth-secondary">Policies</h2>
+          <nav class="flex flex-col gap-3 text-sm font-medium text-white items-center lg:items-start"
+            aria-label="Policies">
+            <a class="inline-flex w-fit items-center justify-center transition-colors duration-200 hover:text-auth-brand-hover active:text-auth-brand-pressed data-[loading=true]:text-white"
+              href="#" data-demo-loading>
+              <span data-link-text>Policies</span>
+            </a>
+            <a class="inline-flex w-fit items-center justify-center transition-colors duration-200 hover:text-auth-brand-hover active:text-auth-brand-pressed data-[loading=true]:text-white"
+              href="#" data-demo-loading>
+              <span data-link-text>Privacy Policy</span>
+            </a>
+            <a class="inline-flex w-fit items-center justify-center transition-colors duration-200 hover:text-auth-brand-hover active:text-auth-brand-pressed data-[loading=true]:text-white"
+              href="#" data-demo-loading>
+              <span data-link-text>Cookies</span>
+            </a>
+            <a class="inline-flex w-fit items-center justify-center transition-colors duration-200 hover:text-auth-brand-hover active:text-auth-brand-pressed data-[loading=true]:text-white"
+              href="#" data-demo-loading>
+              <span data-link-text>Terms Of Service</span>
+            </a>
+          </nav>
+        </section>
+
+        <section class="flex flex-col gap-6">
+          <h2 class="text-base font-semibold uppercase leading-normal text-auth-secondary">Contacts</h2>
+          <div class="flex flex-col gap-3 text-sm font-medium leading-4.5 text-white">
+            <address class="not-italic">
+              1247 Maple Ridge Avenue<br />
+              Springfield, IL 62704<br />
+              United States
+            </address>
+            <a class="flex items-center justify-center gap-2 normal-case transition-colors hover:text-auth-brand-hover active:text-auth-brand lg:justify-start"
+              href="#">
+              <svg class="size-4" viewBox="0 0 16 16" fill="none" aria-hidden="true" xmlns="http://www.w3.org/2000/svg">
+                <path
+                  d="M11.3333 13.6663H4.66668C2.66668 13.6663 1.33334 12.6663 1.33334 10.333V5.66634C1.33334 3.33301 2.66668 2.33301 4.66668 2.33301H11.3333C13.3333 2.33301 14.6667 3.33301 14.6667 5.66634V10.333C14.6667 12.6663 13.3333 13.6663 11.3333 13.6663Z"
+                  stroke="currentColor" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round"
+                  stroke-linejoin="round" />
+                <path d="M11.3333 6L9.24665 7.66667C8.55999 8.21333 7.43332 8.21333 6.74665 7.66667L4.66666 6"
+                  stroke="currentColor" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round"
+                  stroke-linejoin="round" />
+              </svg>
+              support@web3.com
+            </a>
+          </div>
+        </section>
+
+        <section class="flex w-full max-w-75 flex-col gap-8">
+          <div class="flex flex-col gap-6">
+            <h2 class="text-base font-semibold uppercase leading-normal text-auth-secondary">Language</h2>
+            <div class="relative w-full" data-custom-select data-open="false">
+              <button
+                class="flex h-11 w-full cursor-pointer items-center justify-between gap-2.5 rounded-xl border border-transparent bg-auth-bg-secondary px-5 py-[13.5px] text-sm leading-normal text-white transition-[background-color,border-color] active:bg-auth-input data-[open=true]:border-auth-brand data-[open=true]:bg-auth-input"
+                type="button" aria-haspopup="listbox" aria-expanded="false" aria-label="Language" data-select-button
+                data-open="false">
+                <span data-select-value>English</span>
+                <img class="size-4 transition-transform duration-200 data-[open=true]:rotate-180"
+                  src="./img/selection-arrow-icon.svg" width="16" height="16" alt="" aria-hidden="true"
+                  data-select-arrow />
+              </button>
+              <div
+                class="absolute left-0 top-[calc(100%+8px)] z-50 w-full overflow-hidden rounded-xl bg-auth-bg-secondary p-1 shadow-2xl"
+                hidden role="listbox" data-select-menu>
+                <button
+                  class="flex w-full cursor-pointer rounded-lg px-3 py-2 text-left text-sm text-white transition-colors hover:bg-auth-input aria-selected:bg-auth-brand"
+                  type="button" role="option" aria-selected="true" data-selected="true"
+                  data-select-option>English</button>
+                <button
+                  class="flex w-full cursor-pointer rounded-lg px-3 py-2 text-left text-sm text-white transition-colors hover:bg-auth-input aria-selected:bg-auth-brand"
+                  type="button" role="option" aria-selected="false" data-selected="false"
+                  data-select-option>Polski</button>
+                <button
+                  class="flex w-full cursor-pointer rounded-lg px-3 py-2 text-left text-sm text-white transition-colors hover:bg-auth-input aria-selected:bg-auth-brand"
+                  type="button" role="option" aria-selected="false" data-selected="false"
+                  data-select-option>Deutsch</button>
+              </div>
+            </div>
+          </div>
+
+          <div class="flex flex-col gap-6">
+            <h2 class="text-base font-semibold uppercase leading-normal text-auth-secondary">Download</h2>
+            <div class="flex flex-wrap items-center justify-center gap-6 lg:justify-start">
+              <a class="inline-flex shrink-0 cursor-pointer items-center justify-center overflow-hidden" href="#"
+                aria-label="Get it on Google Play">
+                <img src="./img/footer-img/footer-googlePlay-icon.svg" width="135" height="40"
+                  alt="Get it on Google Play" data-link-text />
+              </a>
+              <a class="inline-flex shrink-0 cursor-pointer items-center justify-center overflow-hidden" href="#"
+                aria-label="Direct download APK file">
+                <img src="./img/footer-img/footer-apkFile-icon.svg" width="124" height="40"
+                  alt="Direct download APK file" data-link-text />
+              </a>
+              <a class="inline-flex shrink-0 cursor-pointer items-center justify-center overflow-hidden" href="#"
+                aria-label="Download on the App Store">
+                <img src="./img/footer-img/footer-appStore-icon.svg" width="120" height="40"
+                  alt="Download on the App Store" data-link-text />
+              </a>
+            </div>
+          </div>
+        </section>
+      </div>
+
+      <div
+        class="flex h-12 items-center justify-center bg-auth-brand px-9 py-6 text-center text-sm leading-normal text-white">
+        <p>&copy; 2026 Web3. All rights reserved.</p>
+      </div>
+    </footer>
+  </div>
+</body>
+
+</html>
