@@ -34,8 +34,8 @@ const sidebarPages = [
   { file: path.join("request-a-receipt", "index.html"), label: "Request A Receipt" },
   { file: path.join("downloads", "index.html"), label: "Downloads" },
   { file: path.join("wire-guard-configuration", "index.html"), label: "WireGuard Configuration" },
-  { file: path.join("change-your-online-habits", "index.html"), label: "Change Your Online Habits" },
-  { file: path.join("recover-lost-account-credit-card", "index.html"), label: "Recover Lost Account" }
+  { file: path.join("change-your-online-habits", "index.html"), label: "Change Your Online Habits", expectSidebar: false },
+  { file: path.join("recover-lost-account-credit-card", "index.html"), label: "Recover Lost Account", expectSidebar: false }
 ];
 
 (async () => {
@@ -163,6 +163,60 @@ const sidebarPages = [
       await page.close();
     }
   }
+
+  const receiptPage = await browser.newPage({ viewport: { width: 390, height: 1100 } });
+  const receiptErrors = [];
+  receiptPage.on("console", (message) => {
+    if (message.type() === "error") {
+      receiptErrors.push(message.text());
+    }
+  });
+  receiptPage.on("pageerror", (error) => receiptErrors.push(error.message));
+
+  await receiptPage.goto(pathToFileURL(path.resolve("request-a-receipt", "index.html")).href, { waitUntil: "load" });
+
+  const receiptStates = {};
+  for (const receiptType of ["paypal", "swish", "other", "credit-card"]) {
+    await receiptPage.locator("[data-select-button]").first().click();
+    await receiptPage.locator(`[data-receipt-option='${receiptType}']`).click();
+
+    const hiddenBeforeSubmit = await receiptPage.evaluate((type) => (
+      Boolean(document.querySelector(`[data-receipt-panel="${type}"]`)?.hidden)
+    ), receiptType);
+
+    await receiptPage.click("[data-receipt-submit]");
+    await receiptPage.waitForFunction((type) => (
+      !document.querySelector(`[data-receipt-panel="${type}"]`)?.hidden
+    ), receiptType, { timeout: 2500 });
+
+    const visibleOnlySelected = await receiptPage.evaluate((type) => (
+      Array.from(document.querySelectorAll("[data-receipt-panel]")).every((panel) => (
+        (panel.dataset.receiptPanel === type) === !panel.hidden
+      ))
+    ), receiptType);
+
+    receiptStates[receiptType] = { hiddenBeforeSubmit, visibleOnlySelected };
+  }
+
+  const receiptInfo = await receiptPage.evaluate(() => ({
+    scrollWidth: document.documentElement.scrollWidth,
+    clientWidth: document.documentElement.clientWidth,
+    brokenImages: Array.from(document.images)
+      .filter((image) => !image.complete || image.naturalWidth === 0)
+      .map((image) => image.getAttribute("src")),
+    receiptSidebarActive: document.querySelector("[aria-current='page']")?.textContent?.includes("Request A Receipt"),
+    receiptSelectValue: document.querySelector("[data-receipt-form] [data-select-value]")?.textContent?.trim()
+  }));
+
+  await receiptPage.close();
+  results.push({
+    width: 390,
+    height: 1100,
+    receiptInteraction: true,
+    receiptStates,
+    ...receiptInfo,
+    errors: receiptErrors
+  });
 
   for (const file of addTimePaymentPages) {
     for (const [width, height] of [[1440, 900], [390, 1100], [360, 1100]]) {
@@ -361,6 +415,13 @@ const sidebarPages = [
         result.cashTokenText !== "4DM4-G4EP-8JGG";
     }
 
+    if (result.receiptInteraction) {
+      return result.scrollWidth > result.clientWidth ||
+        !result.receiptSidebarActive ||
+        result.receiptSelectValue !== "Credit Card" ||
+        Object.values(result.receiptStates).some((state) => !state.hiddenBeforeSubmit || !state.visibleOnlySelected);
+    }
+
     if (result.registerViewport) {
       return result.scrollWidth > result.clientWidth || !result.registerVisible || !result.loginHidden;
     }
@@ -376,7 +437,7 @@ const sidebarPages = [
     if (result.sidebarViewport) {
       return result.scrollWidth > result.clientWidth ||
         !result.authPageVisible ||
-        !result.activeSidebarText?.includes(result.label);
+        (result.expectSidebar !== false && !result.activeSidebarText?.includes(result.label));
     }
 
     if (result.interaction) {

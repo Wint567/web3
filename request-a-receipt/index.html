@@ -8,6 +8,7 @@
   <base href="../" />
   <link rel="stylesheet" href="./src/css/output.css" />
   <script src="./src/js/main.js" defer></script>
+  <script src="./src/js/request-receipt.js" defer></script>
 </head>
 
 <body data-auth-current="request-a-receipt">
@@ -19,23 +20,23 @@
       </a>
       <nav class="w-full max-w-97.5 flex items-center justify-between text-sm font-semibold leading-normal text-white"
         aria-label="Primary navigation">
-        <a class="inline-flex h-8 items-center justify-center px-1 transition-colors duration-200 hover:text-auth-brand-hover active:text-auth-brand-pressed data-[loading=true]:text-white"
+        <a class="inline-flex h-8 items-center justify-center px-1 transition-colors duration-200 hover:text-auth-brand-hover active:text-auth-brand-pressed data-[loading=true]:text-auth-brand"
           href="#" data-demo-loading>
           <span data-link-text>VPN</span>
         </a>
-        <a class="inline-flex h-8 items-center justify-center px-1 capitalize transition-colors duration-200 hover:text-auth-brand-hover active:text-auth-brand-pressed data-[loading=true]:text-white"
+        <a class="inline-flex h-8 items-center justify-center px-1 capitalize transition-colors duration-200 hover:text-auth-brand-hover active:text-auth-brand-pressed data-[loading=true]:text-auth-brand"
           href="#" data-demo-loading>
           <span data-link-text>Browser</span>
         </a>
-        <a class="inline-flex h-8 items-center justify-center px-1 capitalize transition-colors duration-200 hover:text-auth-brand-hover active:text-auth-brand-pressed data-[loading=true]:text-white"
+        <a class="inline-flex h-8 items-center justify-center px-1 capitalize transition-colors duration-200 hover:text-auth-brand-hover active:text-auth-brand-pressed data-[loading=true]:text-auth-brand"
           href="#" data-demo-loading>
           <span data-link-text>Pricing</span>
         </a>
-        <a class="inline-flex h-8 items-center justify-center px-1 capitalize transition-colors duration-200 hover:text-auth-brand-hover active:text-auth-brand-pressed data-[loading=true]:text-white"
+        <a class="inline-flex h-8 items-center justify-center px-1 capitalize transition-colors duration-200 hover:text-auth-brand-hover active:text-auth-brand-pressed data-[loading=true]:text-auth-brand"
           href="#" data-demo-loading>
           <span data-link-text>Downloads</span>
         </a>
-        <a class="inline-flex h-8 items-center justify-center px-1 capitalize transition-colors duration-200 hover:text-auth-brand-hover active:text-auth-brand-pressed data-[loading=true]:text-white"
+        <a class="inline-flex h-8 items-center justify-center px-1 capitalize transition-colors duration-200 hover:text-auth-brand-hover active:text-auth-brand-pressed data-[loading=true]:text-auth-brand"
           href="#" data-demo-loading>
           <span data-link-text>Privacy</span>
         </a>
@@ -63,14 +64,14 @@
       </label>
       <div class="gap-4 flex">
         <button
-          class="inline-flex h-11 w-26.25 shrink-0 cursor-pointer items-center justify-center gap-2 overflow-hidden rounded-lg bg-auth-brand px-4 text-sm font-semibold capitalize leading-normal text-white transition-[background-color,width,color] duration-200 hover:bg-auth-brand-hover active:bg-auth-brand-pressed disabled:cursor-not-allowed disabled:bg-[rgb(38_143_108_/_0.3)] disabled:text-white/30 data-[loading=true]:w-[68px] data-[loading=true]:px-0"
+          class="inline-flex h-11 w-26.25 shrink-0 cursor-pointer items-center justify-center gap-2 overflow-hidden rounded-lg bg-auth-brand px-4 text-sm font-semibold capitalize leading-normal text-white transition-[background-color,width,color] duration-200 hover:bg-auth-brand-hover active:bg-auth-brand-pressed disabled:cursor-not-allowed disabled:bg-auth-brand-inactive disabled:text-white/30 data-[loading=true]:w-[68px] data-[loading=true]:bg-auth-brand data-[loading=true]:text-white data-[loading=true]:px-0"
           type="button" data-demo-loading>
           <span data-button-text>Account</span>
           <img class="hidden size-5 animate-spin" src="./img/loading-icon.svg" width="20" height="20" alt=""
             aria-hidden="true" data-button-loader />
         </button>
         <button
-          class="inline-flex h-11 w-25.5 shrink-0 cursor-pointer items-center justify-center gap-2 overflow-hidden rounded-lg bg-[#353c44] px-4 text-sm font-semibold capitalize leading-normal text-white transition-[background-color,width,color] duration-200 hover:bg-[#434f5e] active:bg-[#2b343d] disabled:cursor-not-allowed disabled:bg-[#2c3139] disabled:text-white/40 data-[loading=true]:w-[68px] data-[loading=true]:px-0"
+          class="inline-flex h-11 w-25.5 shrink-0 cursor-pointer items-center justify-center gap-2 overflow-hidden rounded-lg bg-[#353c44] px-4 text-sm font-semibold capitalize leading-normal text-white transition-[background-color,width,color] duration-200 hover:bg-[#434f5e] active:bg-[#2b343d] disabled:cursor-not-allowed disabled:bg-[#2c3139] disabled:text-white/40 data-[loading=true]:w-[68px] data-[loading=true]:bg-[#353c44] data-[loading=true]:text-white data-[loading=true]:px-0"
           type="button" data-logout>
           <span data-button-text>Log Out</span>
           <img class="hidden size-5 animate-spin" src="./img/loading-icon.svg" width="20" height="20" alt=""
@@ -81,7 +82,7 @@
 
     <div class="ml-auto flex items-center gap-5.5 xl:hidden">
       <button
-        class="inline-flex h-11 w-14 cursor-pointer items-center justify-center overflow-hidden rounded-lg bg-[#353c44] transition-[background-color,width] duration-200 hover:bg-[#434f5e] active:bg-[#2b343d] data-[loading=true]:w-[68px]"
+        class="inline-flex h-11 w-14 cursor-pointer items-center justify-center overflow-hidden rounded-lg bg-[#353c44] transition-[background-color,width] duration-200 hover:bg-[#434f5e] active:bg-[#2b343d] data-[loading=true]:w-[68px] data-[loading=true]:bg-[#353c44] data-[loading=true]:text-white data-[loading=true]:px-0"
         type="button" aria-label="Log out" data-logout>
         <span data-button-text>
           <img src="./img/header-img/phoneVersion-logOut-headerBtn-icon.svg" width="24" height="24" alt=""
@@ -91,7 +92,7 @@
           aria-hidden="true" data-button-loader />
       </button>
       <button
-        class="inline-flex h-11 w-16 cursor-pointer items-center justify-center overflow-hidden rounded-lg bg-auth-brand transition-[background-color,width] duration-200 hover:bg-auth-brand-hover active:bg-auth-brand-pressed data-[loading=true]:w-[68px]"
+        class="inline-flex h-11 w-16 cursor-pointer items-center justify-center overflow-hidden rounded-lg bg-auth-brand transition-[background-color,width,color] duration-200 hover:bg-auth-brand-hover active:bg-auth-brand-pressed data-[loading=true]:w-[68px] data-[loading=true]:bg-auth-brand data-[loading=true]:text-white data-[loading=true]:px-0"
         type="button" aria-label="Account" data-demo-loading>
         <span data-button-text>
           <img src="./img/header-img/phoneVersion-Account-headerBtn-icon.svg" width="32" height="32" alt=""
@@ -119,15 +120,15 @@
 
       <nav class="mt-9 flex flex-col gap-10 text-sm font-semibold leading-normal text-white"
         aria-label="Mobile navigation">
-        <a class="uppercase transition-colors hover:text-auth-secondary active:text-auth-brand" href="#"
+        <a class="uppercase transition-colors hover:text-auth-brand-hover active:text-auth-brand-pressed" href="#"
           data-mobile-menu-link>VPN</a>
-        <a class="transition-colors hover:text-auth-secondary active:text-auth-brand" href="#"
+        <a class="transition-colors hover:text-auth-brand-hover active:text-auth-brand-pressed" href="#"
           data-mobile-menu-link>Browser</a>
-        <a class="transition-colors hover:text-auth-secondary active:text-auth-brand" href="#"
+        <a class="transition-colors hover:text-auth-brand-hover active:text-auth-brand-pressed" href="#"
           data-mobile-menu-link>Pricing</a>
-        <a class="transition-colors hover:text-auth-secondary active:text-auth-brand" href="#"
+        <a class="transition-colors hover:text-auth-brand-hover active:text-auth-brand-pressed" href="#"
           data-mobile-menu-link>Downloads</a>
-        <a class="transition-colors hover:text-auth-secondary active:text-auth-brand" href="#"
+        <a class="transition-colors hover:text-auth-brand-hover active:text-auth-brand-pressed" href="#"
           data-mobile-menu-link>Privacy</a>
       </nav>
 
@@ -136,13 +137,13 @@
           POLICIES</h2>
         <nav class="mt-10 flex flex-col gap-10 text-sm font-semibold leading-normal text-white"
           aria-label="Mobile policies navigation">
-          <a class="transition-colors hover:text-auth-secondary active:text-auth-brand" href="#"
+          <a class="transition-colors hover:text-auth-brand-hover active:text-auth-brand-pressed" href="#"
             data-mobile-menu-link>Policies</a>
-          <a class="transition-colors hover:text-auth-secondary active:text-auth-brand" href="#"
+          <a class="transition-colors hover:text-auth-brand-hover active:text-auth-brand-pressed" href="#"
             data-mobile-menu-link>Privacy Policy</a>
-          <a class="transition-colors hover:text-auth-secondary active:text-auth-brand" href="#"
+          <a class="transition-colors hover:text-auth-brand-hover active:text-auth-brand-pressed" href="#"
             data-mobile-menu-link>Cookies</a>
-          <a class="transition-colors hover:text-auth-secondary active:text-auth-brand" href="#"
+          <a class="transition-colors hover:text-auth-brand-hover active:text-auth-brand-pressed" href="#"
             data-mobile-menu-link>Terms Of Service</a>
         </nav>
       </section>
@@ -154,7 +155,7 @@
     <main class="flex w-full flex-1 bg-auth-bg-primary lg:min-h-230">
       <section class="w-full" aria-labelledby="request-a-receipt-title" data-auth-page="request-a-receipt">
         <div class="grid lg:min-h-full lg:grid-cols-[280px_minmax(0,1fr)]">
-          <aside class="hidden bg-auth-bg-secondary px-5 py-8 lg:block" aria-label="Account navigation">
+                    <aside class="hidden bg-auth-bg-secondary px-5 py-8 lg:block" aria-label="Account navigation">
             <div class="rounded-xl bg-auth-input p-4">
               <p class="text-[10px] font-semibold uppercase leading-normal text-auth-secondary">PAID UNTIL</p>
               <p class="mt-1 text-[13px] font-semibold leading-normal text-white">25/06/2026 20:34</p>
@@ -162,54 +163,212 @@
 
             <nav class="mt-8 flex flex-col" aria-label="Account menu">
               <p class="mb-6 px-3 text-[10px] font-semibold uppercase leading-normal text-auth-secondary">ACCOUNT MANAGEMENT</p>
-              <a class="flex h-10 items-center gap-3 rounded-lg px-3 text-sm font-medium leading-normal text-white transition-colors hover:bg-auth-input active:bg-auth-brand-pressed" href="./add-time/index.html">
+              <a class="flex h-10 items-center gap-3 rounded-lg px-3 text-sm font-medium leading-normal text-white transition-colors hover:bg-auth-input active:bg-auth-brand-pressed"
+                href="./add-time/index.html">
                 <img src="./img/aside-img/addTime-icon.svg" width="16" height="16" alt="" aria-hidden="true" />
                 Add Time
               </a>
-              <a class="mt-1 flex h-10 items-center gap-3 rounded-lg px-3 text-sm font-medium leading-normal text-white transition-colors hover:bg-auth-input active:bg-auth-brand-pressed" href="./devices/index.html">
+              <a class="mt-1 flex h-10 items-center gap-3 rounded-lg px-3 text-sm font-medium leading-normal text-white transition-colors hover:bg-auth-input active:bg-auth-brand-pressed"
+                href="./devices/index.html">
                 <img src="./img/aside-img/devices-icon.svg" width="16" height="16" alt="" aria-hidden="true" />
                 Devices
               </a>
-              <a class="mt-1 flex h-10 items-center gap-3 rounded-lg bg-auth-aside-active px-3 text-sm font-medium leading-normal text-white" href="./request-a-receipt/index.html" aria-current="page">
+              <a class="mt-1 flex h-10 items-center gap-3 rounded-lg bg-auth-aside-active px-3 text-sm font-medium leading-normal text-white"
+                href="./request-a-receipt/index.html" aria-current="page">
                 <img src="./img/aside-img/requestAReceipt-icon.svg" width="16" height="16" alt="" aria-hidden="true" />
                 Request A Receipt
               </a>
-
               <p class="mb-6 mt-17.5 px-3 text-[10px] font-semibold uppercase leading-normal text-auth-secondary">DOWNLOADS</p>
-              <a class="flex h-10 items-center gap-3 rounded-lg px-3 text-sm font-medium leading-normal text-white transition-colors hover:bg-auth-input active:bg-auth-brand-pressed" href="./downloads/index.html">
+              <a class="mt-1 flex h-10 items-center gap-3 rounded-lg px-3 text-sm font-medium leading-normal text-white transition-colors hover:bg-auth-input active:bg-auth-brand-pressed"
+                href="./downloads/index.html">
                 <img src="./img/aside-img/downloads-icon.svg" width="16" height="16" alt="" aria-hidden="true" />
                 Downloads
               </a>
-              <a class="mt-1 flex h-10 items-center gap-3 rounded-lg px-3 text-sm font-medium leading-normal text-white transition-colors hover:bg-auth-input active:bg-auth-brand-pressed" href="./wire-guard-configuration/index.html">
+              <a class="mt-1 flex h-10 items-center gap-3 rounded-lg px-3 text-sm font-medium leading-normal text-white transition-colors hover:bg-auth-input active:bg-auth-brand-pressed"
+                href="./wire-guard-configuration/index.html">
                 <img src="./img/aside-img/wireGuardConfiguration-icon.svg" width="16" height="16" alt="" aria-hidden="true" />
                 WireGuard Configuration
               </a>
-
               <p class="mb-6 mt-17.5 px-3 text-[10px] font-semibold uppercase leading-normal text-auth-secondary">GUIDES</p>
-              <a class="flex h-10 items-center gap-3 rounded-lg px-3 text-sm font-medium leading-normal text-white transition-colors hover:bg-auth-input active:bg-auth-brand-pressed" href="./change-your-online-habits/index.html">
+              <a class="mt-1 flex h-10 items-center gap-3 rounded-lg px-3 text-sm font-medium leading-normal text-white transition-colors hover:bg-auth-input active:bg-auth-brand-pressed"
+                href="./change-your-online-habits/index.html">
                 <img src="./img/aside-img/changeYourOnlineHabits-icon.svg" width="16" height="16" alt="" aria-hidden="true" />
                 Change Your Online Habits
               </a>
-              <a class="mt-1 flex h-10 items-center gap-3 rounded-lg px-3 text-sm font-medium leading-normal text-white transition-colors hover:bg-auth-input active:bg-auth-brand-pressed" href="./recover-lost-account-credit-card/index.html">
+              <a class="mt-1 flex h-10 items-center gap-3 rounded-lg px-3 text-sm font-medium leading-normal text-white transition-colors hover:bg-auth-input active:bg-auth-brand-pressed"
+                href="./recover-lost-account-credit-card/index.html">
                 <img src="./img/aside-img/recoverLostAccount.svg" width="16" height="16" alt="" aria-hidden="true" />
                 Recover Lost Account
               </a>
             </nav>
           </aside>
 
-          <div class="flex min-w-0 flex-col gap-6 px-[18px] py-10 lg:px-8 lg:py-9">
-            <div class="flex flex-col gap-3">
-              <nav class="flex items-center gap-2 text-xs leading-normal text-auth-secondary lg:text-sm" aria-label="Breadcrumb">
-                <a class="transition-colors hover:text-auth-brand-hover active:text-auth-brand-pressed" href="./add-time/index.html">Home</a>
+          <div class="px-5 py-10 lg:px-8 lg:py-9">
+            <div class="w-full">
+              <nav class="flex items-center gap-2 text-xs leading-tight text-auth-secondary" aria-label="Breadcrumb">
+                <a class="transition-colors hover:text-auth-brand-hover active:text-auth-brand-pressed"
+                  href="./add-time/index.html">Home</a>
                 <span>/</span>
                 <span class="text-white">Request A Receipt</span>
               </nav>
-              <h1 id="request-a-receipt-title" class="text-2xl font-medium capitalize leading-normal text-white lg:text-[26px]">Request A Receipt</h1>
-            </div>
+              <h1 id="request-a-receipt-title" class="mt-2 text-2xl font-medium capitalize leading-tight text-white">
+                Request A Receipt</h1>
+              <p class="mt-5 text-sm leading-tight text-white">Please select the receipt type to continue.</p>
 
-            <section class="min-h-[160px] rounded-lg bg-auth-bg-secondary px-5 py-6 lg:px-6" aria-label="Request A Receipt content">
-              <!-- TODO: Add Request A Receipt page content here. -->
-            </section>
+              <form class="mt-5 flex w-full flex-col gap-3 lg:w-fit lg:flex-row lg:items-end" data-receipt-form
+                data-receipt-selected="">
+                <div class="flex w-full flex-col gap-3 lg:w-[370px]">
+                  <p class="text-[10px] font-semibold uppercase leading-tight text-auth-secondary">RECEIPT TYPE</p>
+                  <div class="relative w-full" data-custom-select data-open="false">
+                    <button
+                      class="flex h-11 w-full cursor-pointer items-center justify-between gap-2.5 rounded-xl border border-transparent bg-auth-bg-secondary px-5 py-[13.5px] text-sm leading-normal text-white transition-[background-color,border-color] active:bg-auth-input data-[open=true]:border-auth-brand data-[open=true]:bg-auth-input"
+                      type="button" aria-haspopup="listbox" aria-expanded="false" aria-label="Receipt type"
+                      data-select-button data-open="false">
+                      <span data-select-value>Select</span>
+                      <img class="size-4 transition-transform duration-200 data-[open=true]:rotate-180"
+                        src="./img/selection-arrow-icon.svg" width="16" height="16" alt="" aria-hidden="true"
+                        data-select-arrow />
+                    </button>
+                    <div
+                      class="absolute left-0 top-[calc(100%+8px)] z-50 w-full overflow-hidden rounded-xl bg-auth-bg-secondary p-1 shadow-2xl"
+                      hidden role="listbox" data-select-menu>
+                      <button
+                        class="flex w-full cursor-pointer rounded-lg px-3 py-2 text-left text-sm text-white transition-colors hover:bg-auth-input aria-selected:bg-auth-brand"
+                        type="button" role="option" aria-selected="true" data-selected="true" data-receipt-option=""
+                        data-select-option>Select</button>
+                      <button
+                        class="flex w-full cursor-pointer rounded-lg px-3 py-2 text-left text-sm text-white transition-colors hover:bg-auth-input aria-selected:bg-auth-brand"
+                        type="button" role="option" aria-selected="false" data-selected="false"
+                        data-receipt-option="credit-card" data-select-option>Credit Card</button>
+                      <button
+                        class="flex w-full cursor-pointer rounded-lg px-3 py-2 text-left text-sm text-white transition-colors hover:bg-auth-input aria-selected:bg-auth-brand"
+                        type="button" role="option" aria-selected="false" data-selected="false"
+                        data-receipt-option="paypal" data-select-option>PayPal</button>
+                      <button
+                        class="flex w-full cursor-pointer rounded-lg px-3 py-2 text-left text-sm text-white transition-colors hover:bg-auth-input aria-selected:bg-auth-brand"
+                        type="button" role="option" aria-selected="false" data-selected="false"
+                        data-receipt-option="swish" data-select-option>Swish</button>
+                      <button
+                        class="flex w-full cursor-pointer rounded-lg px-3 py-2 text-left text-sm text-white transition-colors hover:bg-auth-input aria-selected:bg-auth-brand"
+                        type="button" role="option" aria-selected="false" data-selected="false"
+                        data-receipt-option="other" data-select-option>Other</button>
+                    </div>
+                  </div>
+                </div>
+
+                <button
+                  class="inline-flex h-11 w-full cursor-pointer items-center justify-center gap-2 overflow-hidden rounded-lg bg-auth-brand px-6 text-sm font-semibold leading-normal text-white transition-[background-color,width,color] duration-200 hover:bg-auth-brand-hover active:bg-auth-brand-pressed disabled:cursor-not-allowed disabled:bg-auth-brand-inactive disabled:text-white/30 data-[loading=true]:w-[68px] data-[loading=true]:bg-auth-brand data-[loading=true]:text-white data-[loading=true]:px-0 lg:w-24"
+                  type="submit" data-receipt-submit>
+                  <span data-button-text>Submit</span>
+                  <img class="hidden size-5 animate-spin" src="./img/loading-icon.svg" width="20" height="20"
+                    alt="loading" aria-hidden="true" data-button-loader />
+                </button>
+              </form>
+
+              <section class="mt-10 rounded-xl bg-auth-bg-secondary p-6 lg:mt-8" data-receipt-panel="credit-card"
+                hidden>
+                <h2 class="text-sm font-semibold uppercase leading-tight text-white">CREDIT CARD</h2>
+                <p class="w-full max-w-212.5 mt-5 text-sm leading-tight text-white">
+                  If you paid using a credit card you can find the payment token in your bank statement. It should have
+                  the format VPN*xxxxxxxxxx but might look different depending on your bank. VPN* is not part of the
+                  payment token. <br> The token expires 20 days after the payment. If you need a receipt after that,
+                  contact
+                  support with your account number.
+                </p>
+                <div class="mt-5 flex flex-col gap-3">
+                  <label class="text-[10px] font-semibold uppercase leading-tight text-auth-secondary"
+                    for="card-payment-token">PAYMENT TOKEN</label>
+                  <input id="card-payment-token"
+                    class="h-11 w-full rounded-lg border border-transparent bg-auth-input px-5 text-sm leading-normal text-white outline-none transition-[background-color,border-color] placeholder:text-auth-secondary hover:border-white/10 focus:border-auth-brand disabled:cursor-not-allowed disabled:bg-auth-input-muted disabled:text-white/30"
+                    type="text" placeholder="Enter Payment Token" autocomplete="off" />
+                </div>
+                <button
+                  class="mt-5 inline-flex h-11 w-full cursor-pointer items-center justify-center gap-2 overflow-hidden rounded-lg bg-auth-brand px-6 text-sm font-semibold leading-normal text-white transition-[background-color,width,color] duration-200 hover:bg-auth-brand-hover active:bg-auth-brand-pressed disabled:cursor-not-allowed disabled:bg-auth-brand-inactive disabled:text-white/30 data-[loading=true]:w-[68px] data-[loading=true]:bg-auth-brand data-[loading=true]:px-0 lg:w-[171px]"
+                  type="button" data-demo-loading>
+                  <span data-button-text>Download Receipt</span>
+                  <img class="hidden size-5 animate-spin" src="./img/loading-icon.svg" width="20" height="20"
+                    alt="loading" aria-hidden="true" data-button-loader />
+                </button>
+              </section>
+
+              <section class="mt-10 rounded-xl bg-auth-bg-secondary p-6 lg:mt-8" data-receipt-panel="paypal" hidden>
+                <h2 class="text-sm font-semibold uppercase leading-tight text-white">PAYPAL</h2>
+                <h3 class="mt-5 text-sm font-semibold leading-tight text-white">Single payment</h3>
+                <p class="mt-5 text-sm leading-tight max-w-217.5 text-white">
+                  Your payment token is the same as the Invoice ID which can be found in your
+                  <a class="text-auth-brand underline underline-offset-2 transition-colors hover:text-auth-brand-hover"
+                    href="#">PayPal transaction history</a>. <br>
+                  The token expires 20 days after the payment. If you need a receipt after that, contact support with
+                  your account number.
+                </p>
+                <div class="mt-5 flex flex-col gap-3">
+                  <label class="text-[10px] font-semibold uppercase leading-tight text-auth-secondary"
+                    for="paypal-payment-token">PAYMENT TOKEN</label>
+                  <input id="paypal-payment-token"
+                    class="h-11 w-full rounded-lg border border-transparent bg-auth-input px-5 text-sm leading-normal text-white outline-none transition-[background-color,border-color] placeholder:text-auth-secondary hover:border-white/10 focus:border-auth-brand disabled:cursor-not-allowed disabled:bg-auth-input-muted disabled:text-white/30"
+                    type="text" placeholder="Enter Payment Token" autocomplete="off" />
+                </div>
+                <button
+                  class="mt-5 inline-flex h-11 w-full cursor-pointer items-center justify-center gap-2 overflow-hidden rounded-lg bg-auth-brand px-6 text-sm font-semibold leading-normal text-white transition-[background-color,width,color] duration-200 hover:bg-auth-brand-hover active:bg-auth-brand-pressed disabled:cursor-not-allowed disabled:bg-auth-brand-inactive disabled:text-white/30 data-[loading=true]:w-[68px] data-[loading=true]:bg-auth-brand data-[loading=true]:px-0 lg:w-[171px]"
+                  type="button" data-demo-loading>
+                  <span data-button-text>Download Receipt</span>
+                  <img class="hidden size-5 animate-spin" src="./img/loading-icon.svg" width="20" height="20"
+                    alt="loading" aria-hidden="true" data-button-loader />
+                </button>
+              </section>
+
+              <section class="mt-10 rounded-xl bg-auth-bg-secondary p-6 lg:mt-8" data-receipt-panel="swish" hidden>
+                <h2 class="text-sm font-semibold uppercase leading-tight text-white">SWISH</h2>
+                <p class="mt-5 text-sm leading-tight max-w-217.5 text-white">
+                  If you paid with Swish, your payment token is the same as your Order ID which you can find on the
+                  payment entry under History. <br>
+                  The token expires 20 days after the payment. If you need a receipt after
+                  that, contact support with your account number.
+                </p>
+                <div class="mt-5 flex flex-col gap-3">
+                  <label class="text-[10px] font-semibold uppercase leading-tight text-auth-secondary"
+                    for="swish-payment-token">PAYMENT TOKEN</label>
+                  <input id="swish-payment-token"
+                    class="h-11 w-full rounded-lg border border-transparent bg-auth-input px-5 text-sm leading-normal text-white outline-none transition-[background-color,border-color] placeholder:text-auth-secondary hover:border-white/10 focus:border-auth-brand disabled:cursor-not-allowed disabled:bg-auth-input-muted disabled:text-white/30"
+                    type="text" placeholder="Enter Payment Token" autocomplete="off" />
+                </div>
+                <button
+                  class="mt-5 inline-flex h-11 w-full cursor-pointer items-center justify-center gap-2 overflow-hidden rounded-lg bg-auth-brand px-6 text-sm font-semibold leading-normal text-white transition-[background-color,width,color] duration-200 hover:bg-auth-brand-hover active:bg-auth-brand-pressed disabled:cursor-not-allowed disabled:bg-auth-brand-inactive disabled:text-white/30 data-[loading=true]:w-[68px] data-[loading=true]:bg-auth-brand data-[loading=true]:px-0 lg:w-[171px]"
+                  type="button" data-demo-loading>
+                  <span data-button-text>Download Receipt</span>
+                  <img class="hidden size-5 animate-spin" src="./img/loading-icon.svg" width="20" height="20"
+                    alt="loading" aria-hidden="true" data-button-loader />
+                </button>
+              </section>
+
+              <section class="mt-10 rounded-xl bg-auth-bg-secondary p-6 lg:mt-8" data-receipt-panel="other" hidden>
+                <h2 class="text-sm font-semibold uppercase leading-tight text-white">OTHER</h2>
+                <p class="mt-5 w-full max-w-217.5 text-sm leading-tight text-white">
+                  Depending on the payment method used, you might be able to find your payment token in your bank
+                  statement. If that's not the case, please get in touch with us: support@web3.com<br />
+                  It should have the format VPN*xxxxxxxxxx but might look different depending on your bank. VPN* is not
+                  part of the payment token.<br />
+                  The token expires 20 days after the payment. If you need a receipt after that, contact support with
+                  your account number.
+                </p>
+                <div class="mt-5 flex flex-col gap-3">
+                  <label class="text-[10px] font-semibold uppercase leading-tight text-auth-secondary"
+                    for="other-payment-token">PAYMENT TOKEN</label>
+                  <input id="other-payment-token"
+                    class="h-11 w-full rounded-lg border border-transparent bg-auth-input px-5 text-sm leading-normal text-white outline-none transition-[background-color,border-color] placeholder:text-auth-secondary hover:border-white/10 focus:border-auth-brand disabled:cursor-not-allowed disabled:bg-auth-input-muted disabled:text-white/30"
+                    type="text" placeholder="Enter Payment Token" autocomplete="off" />
+                </div>
+                <button
+                  class="mt-5 inline-flex h-11 w-full cursor-pointer items-center justify-center gap-2 overflow-hidden rounded-lg bg-auth-brand px-6 text-sm font-semibold leading-normal text-white transition-[background-color,width,color] duration-200 hover:bg-auth-brand-hover active:bg-auth-brand-pressed disabled:cursor-not-allowed disabled:bg-auth-brand-inactive disabled:text-white/30 data-[loading=true]:w-[68px] data-[loading=true]:bg-auth-brand data-[loading=true]:px-0 lg:w-[171px]"
+                  type="button" data-demo-loading>
+                  <span data-button-text>Download Receipt</span>
+                  <img class="hidden size-5 animate-spin" src="./img/loading-icon.svg" width="20" height="20"
+                    alt="loading" aria-hidden="true" data-button-loader />
+                </button>
+              </section>
+
+
+            </div>
           </div>
         </div>
       </section>
@@ -262,19 +421,19 @@
           <h2 class="text-base font-semibold uppercase leading-normal text-auth-secondary">Policies</h2>
           <nav class="flex flex-col gap-3 text-sm font-medium text-white items-center lg:items-start"
             aria-label="Policies">
-            <a class="inline-flex w-fit items-center justify-center transition-colors duration-200 hover:text-auth-brand-hover active:text-auth-brand-pressed data-[loading=true]:text-white"
+            <a class="inline-flex w-fit items-center justify-center transition-colors duration-200 hover:text-auth-brand-hover active:text-auth-brand-pressed data-[loading=true]:text-auth-brand"
               href="#" data-demo-loading>
               <span data-link-text>Policies</span>
             </a>
-            <a class="inline-flex w-fit items-center justify-center transition-colors duration-200 hover:text-auth-brand-hover active:text-auth-brand-pressed data-[loading=true]:text-white"
+            <a class="inline-flex w-fit items-center justify-center transition-colors duration-200 hover:text-auth-brand-hover active:text-auth-brand-pressed data-[loading=true]:text-auth-brand"
               href="#" data-demo-loading>
               <span data-link-text>Privacy Policy</span>
             </a>
-            <a class="inline-flex w-fit items-center justify-center transition-colors duration-200 hover:text-auth-brand-hover active:text-auth-brand-pressed data-[loading=true]:text-white"
+            <a class="inline-flex w-fit items-center justify-center transition-colors duration-200 hover:text-auth-brand-hover active:text-auth-brand-pressed data-[loading=true]:text-auth-brand"
               href="#" data-demo-loading>
               <span data-link-text>Cookies</span>
             </a>
-            <a class="inline-flex w-fit items-center justify-center transition-colors duration-200 hover:text-auth-brand-hover active:text-auth-brand-pressed data-[loading=true]:text-white"
+            <a class="inline-flex w-fit items-center justify-center transition-colors duration-200 hover:text-auth-brand-hover active:text-auth-brand-pressed data-[loading=true]:text-auth-brand"
               href="#" data-demo-loading>
               <span data-link-text>Terms Of Service</span>
             </a>
@@ -289,7 +448,7 @@
               Springfield, IL 62704<br />
               United States
             </address>
-            <a class="flex items-center justify-center gap-2 normal-case transition-colors hover:text-auth-brand-hover active:text-auth-brand lg:justify-start"
+            <a class="flex items-center justify-center gap-2 normal-case transition-colors hover:text-auth-brand-hover active:text-auth-brand-pressed lg:justify-start"
               href="#">
               <svg class="size-4" viewBox="0 0 16 16" fill="none" aria-hidden="true" xmlns="http://www.w3.org/2000/svg">
                 <path

@@ -82,8 +82,12 @@
 
     const label = control.querySelector("[data-button-text], [data-link-text]");
     const loader = control.querySelector("[data-button-loader], [data-link-loader]");
+    const isButton = control instanceof HTMLButtonElement;
 
     if (isLoading) {
+      if (isButton && !control.dataset.disabledBeforeLoading) {
+        control.dataset.disabledBeforeLoading = String(control.disabled);
+      }
       control.dataset.loading = "true";
     } else {
       delete control.dataset.loading;
@@ -92,8 +96,14 @@
     control.classList.toggle("pointer-events-none", isLoading);
     control.setAttribute("aria-busy", String(isLoading));
 
-    if (control instanceof HTMLButtonElement) {
-      control.disabled = control.dataset.locked === "true";
+    if (isButton) {
+      if (isLoading) {
+        control.disabled = true;
+      } else {
+        control.disabled = control.dataset.locked === "true" || control.dataset.disabledBeforeLoading === "true";
+        delete control.dataset.disabledBeforeLoading;
+      }
+
       control.setAttribute("aria-disabled", String(isLoading || control.disabled));
     } else {
       control.setAttribute("aria-disabled", String(isLoading));
@@ -114,10 +124,27 @@
     }
   };
 
+  const runWithLoading = async (control, callback, options = {}) => {
+    if (!control || control.dataset.loading === "true") {
+      return false;
+    }
+
+    const min = options.min ?? 800;
+    const max = options.max ?? 1200;
+
+    setLoading(control, true);
+    await wait(min, max);
+    setLoading(control, false);
+    await callback?.();
+
+    return true;
+  };
+
   window.Web3UI = {
     ...(window.Web3UI || {}),
     wait,
-    setLoading
+    setLoading,
+    runWithLoading
   };
 
   document.querySelectorAll("[data-demo-loading]").forEach((control) => {
@@ -131,9 +158,7 @@
         event.preventDefault();
       }
 
-      setLoading(control, true);
-      await wait();
-      setLoading(control, false);
+      await runWithLoading(control);
     });
   });
 
@@ -142,9 +167,15 @@
       event.preventDefault();
       if (control.dataset.loading === "true") return;
 
-      setLoading(control, true);
-      await wait();
-      window.location.href = new URL("./index.html", document.baseURI).href;
+      await runWithLoading(control, () => {
+        window.location.href = new URL("./index.html", document.baseURI).href;
+      });
+    });
+  });
+
+  document.querySelectorAll('a[href="#"]').forEach((link) => {
+    link.addEventListener("click", (event) => {
+      event.preventDefault();
     });
   });
 

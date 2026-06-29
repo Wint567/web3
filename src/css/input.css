@@ -1,6 +1,7 @@
 @import "tailwindcss";
 
 @source "../../index.html";
+@source "../../register.html";
 @source "../../add-time/**/*.html";
 @source "../../change-your-online-habits/**/*.html";
 @source "../../devices/**/*.html";
@@ -21,10 +22,19 @@
   --color-auth-brand: #268f6c;
   --color-auth-brand-hover: #09b078;
   --color-auth-brand-pressed: #137151;
+  --color-auth-brand-inactive: #284643;
   --color-auth-aside-active: #276052;
   --color-auth-button-border: #d2d7f145;
+  --color-auth-button-gray: #353c44;
+  --color-auth-button-gray-hover: #434f5e;
+  --color-auth-button-gray-pressed: #2b343d;
+  --color-auth-button-gray-inactive: #2c3139;
   --color-auth-info: #1a5767;
   --color-auth-danger: #ef3b34;
+  --color-auth-danger-button: #d72d27;
+  --color-auth-danger-hover: #ef3b34;
+  --color-auth-danger-pressed: #bc0c06;
+  --color-auth-danger-inactive: #7b2d2e;
 }
 
 @layer base {
@@ -40,9 +50,18 @@
     --auth-brand: #268f6c;
     --auth-brand-hover: #09b078;
     --auth-brand-pressed: #137151;
+    --auth-brand-inactive: #284643;
     --auth-danger: #ef3b34;
+    --auth-danger-button: #d72d27;
+    --auth-danger-hover: #ef3b34;
+    --auth-danger-pressed: #bc0c06;
+    --auth-danger-inactive: #7b2d2e;
     --auth-aside-active: #276052;
     --auth-button-border: #d2d7f145;
+    --auth-button-gray: #353c44;
+    --auth-button-gray-hover: #434f5e;
+    --auth-button-gray-pressed: #2b343d;
+    --auth-button-gray-inactive: #2c3139;
     --auth-info: #1a5767;
   }
 

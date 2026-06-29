@@ -8,6 +8,7 @@
   <base href="../" />
   <link rel="stylesheet" href="./src/css/output.css" />
   <script src="./src/js/main.js" defer></script>
+  <script src="./src/js/recover-lost-account.js" defer></script>
 </head>
 
 <body data-auth-current="recover-lost-account-credit-card">
@@ -19,23 +20,23 @@
       </a>
       <nav class="w-full max-w-97.5 flex items-center justify-between text-sm font-semibold leading-normal text-white"
         aria-label="Primary navigation">
-        <a class="inline-flex h-8 items-center justify-center px-1 transition-colors duration-200 hover:text-auth-brand-hover active:text-auth-brand-pressed data-[loading=true]:text-white"
+        <a class="inline-flex h-8 items-center justify-center px-1 transition-colors duration-200 hover:text-auth-brand-hover active:text-auth-brand-pressed data-[loading=true]:text-auth-brand"
           href="#" data-demo-loading>
           <span data-link-text>VPN</span>
         </a>
-        <a class="inline-flex h-8 items-center justify-center px-1 capitalize transition-colors duration-200 hover:text-auth-brand-hover active:text-auth-brand-pressed data-[loading=true]:text-white"
+        <a class="inline-flex h-8 items-center justify-center px-1 capitalize transition-colors duration-200 hover:text-auth-brand-hover active:text-auth-brand-pressed data-[loading=true]:text-auth-brand"
           href="#" data-demo-loading>
           <span data-link-text>Browser</span>
         </a>
-        <a class="inline-flex h-8 items-center justify-center px-1 capitalize transition-colors duration-200 hover:text-auth-brand-hover active:text-auth-brand-pressed data-[loading=true]:text-white"
+        <a class="inline-flex h-8 items-center justify-center px-1 capitalize transition-colors duration-200 hover:text-auth-brand-hover active:text-auth-brand-pressed data-[loading=true]:text-auth-brand"
           href="#" data-demo-loading>
           <span data-link-text>Pricing</span>
         </a>
-        <a class="inline-flex h-8 items-center justify-center px-1 capitalize transition-colors duration-200 hover:text-auth-brand-hover active:text-auth-brand-pressed data-[loading=true]:text-white"
+        <a class="inline-flex h-8 items-center justify-center px-1 capitalize transition-colors duration-200 hover:text-auth-brand-hover active:text-auth-brand-pressed data-[loading=true]:text-auth-brand"
           href="#" data-demo-loading>
           <span data-link-text>Downloads</span>
         </a>
-        <a class="inline-flex h-8 items-center justify-center px-1 capitalize transition-colors duration-200 hover:text-auth-brand-hover active:text-auth-brand-pressed data-[loading=true]:text-white"
+        <a class="inline-flex h-8 items-center justify-center px-1 capitalize transition-colors duration-200 hover:text-auth-brand-hover active:text-auth-brand-pressed data-[loading=true]:text-auth-brand"
           href="#" data-demo-loading>
           <span data-link-text>Privacy</span>
         </a>
@@ -63,14 +64,14 @@
       </label>
       <div class="gap-4 flex">
         <button
-          class="inline-flex h-11 w-26.25 shrink-0 cursor-pointer items-center justify-center gap-2 overflow-hidden rounded-lg bg-auth-brand px-4 text-sm font-semibold capitalize leading-normal text-white transition-[background-color,width,color] duration-200 hover:bg-auth-brand-hover active:bg-auth-brand-pressed disabled:cursor-not-allowed disabled:bg-[rgb(38_143_108_/_0.3)] disabled:text-white/30 data-[loading=true]:w-[68px] data-[loading=true]:px-0"
+          class="inline-flex h-11 w-26.25 shrink-0 cursor-pointer items-center justify-center gap-2 overflow-hidden rounded-lg bg-auth-brand px-4 text-sm font-semibold capitalize leading-normal text-white transition-[background-color,width,color] duration-200 hover:bg-auth-brand-hover active:bg-auth-brand-pressed disabled:cursor-not-allowed disabled:bg-auth-brand-inactive disabled:text-white/30 data-[loading=true]:w-[68px] data-[loading=true]:bg-auth-brand data-[loading=true]:text-white data-[loading=true]:px-0"
           type="button" data-demo-loading>
           <span data-button-text>Account</span>
           <img class="hidden size-5 animate-spin" src="./img/loading-icon.svg" width="20" height="20" alt=""
             aria-hidden="true" data-button-loader />
         </button>
         <button
-          class="inline-flex h-11 w-25.5 shrink-0 cursor-pointer items-center justify-center gap-2 overflow-hidden rounded-lg bg-[#353c44] px-4 text-sm font-semibold capitalize leading-normal text-white transition-[background-color,width,color] duration-200 hover:bg-[#434f5e] active:bg-[#2b343d] disabled:cursor-not-allowed disabled:bg-[#2c3139] disabled:text-white/40 data-[loading=true]:w-[68px] data-[loading=true]:px-0"
+          class="inline-flex h-11 w-25.5 shrink-0 cursor-pointer items-center justify-center gap-2 overflow-hidden rounded-lg bg-[#353c44] px-4 text-sm font-semibold capitalize leading-normal text-white transition-[background-color,width,color] duration-200 hover:bg-[#434f5e] active:bg-[#2b343d] disabled:cursor-not-allowed disabled:bg-[#2c3139] disabled:text-white/40 data-[loading=true]:w-[68px] data-[loading=true]:bg-[#353c44] data-[loading=true]:text-white data-[loading=true]:px-0"
           type="button" data-logout>
           <span data-button-text>Log Out</span>
           <img class="hidden size-5 animate-spin" src="./img/loading-icon.svg" width="20" height="20" alt=""
@@ -81,7 +82,7 @@
 
     <div class="ml-auto flex items-center gap-5.5 xl:hidden">
       <button
-        class="inline-flex h-11 w-14 cursor-pointer items-center justify-center overflow-hidden rounded-lg bg-[#353c44] transition-[background-color,width] duration-200 hover:bg-[#434f5e] active:bg-[#2b343d] data-[loading=true]:w-[68px]"
+        class="inline-flex h-11 w-14 cursor-pointer items-center justify-center overflow-hidden rounded-lg bg-[#353c44] transition-[background-color,width] duration-200 hover:bg-[#434f5e] active:bg-[#2b343d] data-[loading=true]:w-[68px] data-[loading=true]:bg-[#353c44] data-[loading=true]:text-white data-[loading=true]:px-0"
         type="button" aria-label="Log out" data-logout>
         <span data-button-text>
           <img src="./img/header-img/phoneVersion-logOut-headerBtn-icon.svg" width="24" height="24" alt=""
@@ -91,7 +92,7 @@
           aria-hidden="true" data-button-loader />
       </button>
       <button
-        class="inline-flex h-11 w-16 cursor-pointer items-center justify-center overflow-hidden rounded-lg bg-auth-brand transition-[background-color,width] duration-200 hover:bg-auth-brand-hover active:bg-auth-brand-pressed data-[loading=true]:w-[68px]"
+        class="inline-flex h-11 w-16 cursor-pointer items-center justify-center overflow-hidden rounded-lg bg-auth-brand transition-[background-color,width,color] duration-200 hover:bg-auth-brand-hover active:bg-auth-brand-pressed data-[loading=true]:w-[68px] data-[loading=true]:bg-auth-brand data-[loading=true]:text-white data-[loading=true]:px-0"
         type="button" aria-label="Account" data-demo-loading>
         <span data-button-text>
           <img src="./img/header-img/phoneVersion-Account-headerBtn-icon.svg" width="32" height="32" alt=""
@@ -119,15 +120,15 @@
 
       <nav class="mt-9 flex flex-col gap-10 text-sm font-semibold leading-normal text-white"
         aria-label="Mobile navigation">
-        <a class="uppercase transition-colors hover:text-auth-secondary active:text-auth-brand" href="#"
+        <a class="uppercase transition-colors hover:text-auth-brand-hover active:text-auth-brand-pressed" href="#"
           data-mobile-menu-link>VPN</a>
-        <a class="transition-colors hover:text-auth-secondary active:text-auth-brand" href="#"
+        <a class="transition-colors hover:text-auth-brand-hover active:text-auth-brand-pressed" href="#"
           data-mobile-menu-link>Browser</a>
-        <a class="transition-colors hover:text-auth-secondary active:text-auth-brand" href="#"
+        <a class="transition-colors hover:text-auth-brand-hover active:text-auth-brand-pressed" href="#"
           data-mobile-menu-link>Pricing</a>
-        <a class="transition-colors hover:text-auth-secondary active:text-auth-brand" href="#"
+        <a class="transition-colors hover:text-auth-brand-hover active:text-auth-brand-pressed" href="#"
           data-mobile-menu-link>Downloads</a>
-        <a class="transition-colors hover:text-auth-secondary active:text-auth-brand" href="#"
+        <a class="transition-colors hover:text-auth-brand-hover active:text-auth-brand-pressed" href="#"
           data-mobile-menu-link>Privacy</a>
       </nav>
 
@@ -136,13 +137,13 @@
           POLICIES</h2>
         <nav class="mt-10 flex flex-col gap-10 text-sm font-semibold leading-normal text-white"
           aria-label="Mobile policies navigation">
-          <a class="transition-colors hover:text-auth-secondary active:text-auth-brand" href="#"
+          <a class="transition-colors hover:text-auth-brand-hover active:text-auth-brand-pressed" href="#"
             data-mobile-menu-link>Policies</a>
-          <a class="transition-colors hover:text-auth-secondary active:text-auth-brand" href="#"
+          <a class="transition-colors hover:text-auth-brand-hover active:text-auth-brand-pressed" href="#"
             data-mobile-menu-link>Privacy Policy</a>
-          <a class="transition-colors hover:text-auth-secondary active:text-auth-brand" href="#"
+          <a class="transition-colors hover:text-auth-brand-hover active:text-auth-brand-pressed" href="#"
             data-mobile-menu-link>Cookies</a>
-          <a class="transition-colors hover:text-auth-secondary active:text-auth-brand" href="#"
+          <a class="transition-colors hover:text-auth-brand-hover active:text-auth-brand-pressed" href="#"
             data-mobile-menu-link>Terms Of Service</a>
         </nav>
       </section>
@@ -151,65 +152,289 @@
 
 
   <div class="flex min-h-[calc(100vh-70px)] flex-col bg-auth-bg-primary">
-    <main class="flex w-full flex-1 bg-auth-bg-primary lg:min-h-230">
-      <section class="w-full" aria-labelledby="recover-lost-account-credit-card-title" data-auth-page="recover-lost-account-credit-card">
-        <div class="grid lg:min-h-full lg:grid-cols-[280px_minmax(0,1fr)]">
-          <aside class="hidden bg-auth-bg-secondary px-5 py-8 lg:block" aria-label="Account navigation">
-            <div class="rounded-xl bg-auth-input p-4">
-              <p class="text-[10px] font-semibold uppercase leading-normal text-auth-secondary">PAID UNTIL</p>
-              <p class="mt-1 text-[13px] font-semibold leading-normal text-white">25/06/2026 20:34</p>
-            </div>
-
-            <nav class="mt-8 flex flex-col" aria-label="Account menu">
-              <p class="mb-6 px-3 text-[10px] font-semibold uppercase leading-normal text-auth-secondary">ACCOUNT MANAGEMENT</p>
-              <a class="flex h-10 items-center gap-3 rounded-lg px-3 text-sm font-medium leading-normal text-white transition-colors hover:bg-auth-input active:bg-auth-brand-pressed" href="./add-time/index.html">
-                <img src="./img/aside-img/addTime-icon.svg" width="16" height="16" alt="" aria-hidden="true" />
-                Add Time
-              </a>
-              <a class="mt-1 flex h-10 items-center gap-3 rounded-lg px-3 text-sm font-medium leading-normal text-white transition-colors hover:bg-auth-input active:bg-auth-brand-pressed" href="./devices/index.html">
-                <img src="./img/aside-img/devices-icon.svg" width="16" height="16" alt="" aria-hidden="true" />
-                Devices
-              </a>
-              <a class="mt-1 flex h-10 items-center gap-3 rounded-lg px-3 text-sm font-medium leading-normal text-white transition-colors hover:bg-auth-input active:bg-auth-brand-pressed" href="./request-a-receipt/index.html">
-                <img src="./img/aside-img/requestAReceipt-icon.svg" width="16" height="16" alt="" aria-hidden="true" />
-                Request A Receipt
-              </a>
-
-              <p class="mb-6 mt-17.5 px-3 text-[10px] font-semibold uppercase leading-normal text-auth-secondary">DOWNLOADS</p>
-              <a class="flex h-10 items-center gap-3 rounded-lg px-3 text-sm font-medium leading-normal text-white transition-colors hover:bg-auth-input active:bg-auth-brand-pressed" href="./downloads/index.html">
-                <img src="./img/aside-img/downloads-icon.svg" width="16" height="16" alt="" aria-hidden="true" />
-                Downloads
-              </a>
-              <a class="mt-1 flex h-10 items-center gap-3 rounded-lg px-3 text-sm font-medium leading-normal text-white transition-colors hover:bg-auth-input active:bg-auth-brand-pressed" href="./wire-guard-configuration/index.html">
-                <img src="./img/aside-img/wireGuardConfiguration-icon.svg" width="16" height="16" alt="" aria-hidden="true" />
-                WireGuard Configuration
-              </a>
-
-              <p class="mb-6 mt-17.5 px-3 text-[10px] font-semibold uppercase leading-normal text-auth-secondary">GUIDES</p>
-              <a class="flex h-10 items-center gap-3 rounded-lg px-3 text-sm font-medium leading-normal text-white transition-colors hover:bg-auth-input active:bg-auth-brand-pressed" href="./change-your-online-habits/index.html">
-                <img src="./img/aside-img/changeYourOnlineHabits-icon.svg" width="16" height="16" alt="" aria-hidden="true" />
-                Change Your Online Habits
-              </a>
-              <a class="mt-1 flex h-10 items-center gap-3 rounded-lg bg-auth-aside-active px-3 text-sm font-medium leading-normal text-white" href="./recover-lost-account-credit-card/index.html" aria-current="page">
-                <img src="./img/aside-img/recoverLostAccount.svg" width="16" height="16" alt="" aria-hidden="true" />
-                Recover Lost Account
-              </a>
-            </nav>
-          </aside>
-
-          <div class="flex min-w-0 flex-col gap-6 px-[18px] py-10 lg:px-8 lg:py-9">
-            <div class="flex flex-col gap-3">
-              <nav class="flex items-center gap-2 text-xs leading-normal text-auth-secondary lg:text-sm" aria-label="Breadcrumb">
-                <a class="transition-colors hover:text-auth-brand-hover active:text-auth-brand-pressed" href="./add-time/index.html">Home</a>
+    <main class="w-full flex-1 bg-auth-bg-primary">
+      <section class="w-full px-5 pb-10 pt-10 lg:px-8 lg:pb-30 lg:pt-8"
+        aria-labelledby="recover-lost-account-credit-card-title" data-auth-page="recover-lost-account-credit-card"
+        data-recover-page>
+        <div class="mx-auto min-w-0 w-full max-w-230">
+              <nav class="flex items-center gap-2 text-xs leading-tight text-auth-secondary" aria-label="Breadcrumb">
+                <a class="transition-colors hover:text-auth-brand-hover active:text-auth-brand-pressed"
+                  href="./add-time/index.html">Home</a>
                 <span>/</span>
                 <span class="text-white">Recover Lost Account</span>
               </nav>
-              <h1 id="recover-lost-account-credit-card-title" class="text-2xl font-medium capitalize leading-normal text-white lg:text-[26px]">Recover Lost Account</h1>
-            </div>
+              <h1 id="recover-lost-account-credit-card-title"
+                class="mt-2 text-2xl font-medium capitalize leading-tight text-white">Recover Lost Account</h1>
 
-            <section class="min-h-[160px] rounded-lg bg-auth-bg-secondary px-5 py-6 lg:px-6" aria-label="Recover Lost Account content">
-            </section>
-          </div>
+              <p class="mt-5 text-sm leading-normal text-white">
+                Can't remember your account number? It might be possible to recover, although we can't guarantee it
+                since we keep <a
+                  class="text-auth-brand underline underline-offset-2 transition-colors hover:text-auth-brand-hover"
+                  href="#">as little information as possible</a> about our users.
+              </p>
+
+              <section class="mt-10" aria-labelledby="recover-look-title">
+                <h2 id="recover-look-title" class="text-xl font-medium leading-tight text-auth-secondary">
+                  Look In The App
+                </h2>
+                <p class="mt-5 text-sm leading-normal text-white">
+                  First, look in the VPN app. Click on the account to find your account number.
+                </p>
+              </section>
+
+              <section class="mt-10" aria-labelledby="recover-trace-title">
+                <h2 id="recover-trace-title" class="text-xl font-medium leading-tight text-auth-secondary">
+                  Trace Your Payment
+                </h2>
+                <p class="mt-5 text-sm leading-normal text-white">
+                  If that's not an option, then trace your payment method. Select the payment method you used and follow
+                  the instructions. Please note that payments are only traceable for 20 days.
+                </p>
+
+                <div
+                  class="mt-12 max-w-full overflow-x-auto border-b border-white/10 pb-0.5 [-ms-overflow-style:none] [scrollbar-width:none] [&::-webkit-scrollbar]:hidden lg:mt-10"
+                  role="tablist" aria-label="Payment method recovery">
+                  <div class="flex min-w-max lg:min-w-0">
+                    <button
+                      class="h-12 cursor-pointer border-b-2 px-5.5 text-sm font-medium leading-normal text-white transition-colors duration-200 data-[active=true]:border-auth-brand data-[active=false]:border-transparent data-[active=false]:text-white data-[active=false]:hover:text-auth-brand-hover lg:px-6"
+                      type="button" role="tab" aria-selected="true" data-active="true" data-recover-tab="credit-card">
+                      Credit Card
+                    </button>
+                    <button
+                      class="h-12 cursor-pointer border-b-2 px-5.5 text-sm font-medium leading-normal text-white transition-colors duration-200 data-[active=true]:border-auth-brand data-[active=false]:border-transparent data-[active=false]:text-white data-[active=false]:hover:text-auth-brand-hover lg:px-6"
+                      type="button" role="tab" aria-selected="false" data-active="false" data-recover-tab="paypal">
+                      PayPal
+                    </button>
+                    <button
+                      class="h-12 cursor-pointer border-b-2 px-5.5 text-sm font-medium leading-normal text-white transition-colors duration-200 data-[active=true]:border-auth-brand data-[active=false]:border-transparent data-[active=false]:text-white data-[active=false]:hover:text-auth-brand-hover lg:px-6"
+                      type="button" role="tab" aria-selected="false" data-active="false" data-recover-tab="swish">
+                      Swish
+                    </button>
+                    <button
+                      class="h-12 cursor-pointer border-b-2 px-5.5 text-sm font-medium leading-normal text-white transition-colors duration-200 data-[active=true]:border-auth-brand data-[active=false]:border-transparent data-[active=false]:text-white data-[active=false]:hover:text-auth-brand-hover lg:px-6"
+                      type="button" role="tab" aria-selected="false" data-active="false" data-recover-tab="voucher">
+                      Voucher
+                    </button>
+                    <button
+                      class="h-12 cursor-pointer border-b-2 px-5.5 text-sm font-medium leading-normal text-white transition-colors duration-200 data-[active=true]:border-auth-brand data-[active=false]:border-transparent data-[active=false]:text-white data-[active=false]:hover:text-auth-brand-hover lg:px-6"
+                      type="button" role="tab" aria-selected="false" data-active="false" data-recover-tab="cash">
+                      Cash
+                    </button>
+                    <button
+                      class="h-12 cursor-pointer border-b-2 px-5.5 text-sm font-medium leading-normal text-white transition-colors duration-200 data-[active=true]:border-auth-brand data-[active=false]:border-transparent data-[active=false]:text-white data-[active=false]:hover:text-auth-brand-hover lg:px-6"
+                      type="button" role="tab" aria-selected="false" data-active="false" data-recover-tab="bank-wire">
+                      Bank Wire
+                    </button>
+                    <button
+                      class="h-12 cursor-pointer border-b-2 px-5.5 text-sm font-medium leading-normal text-white transition-colors duration-200 data-[active=true]:border-auth-brand data-[active=false]:border-transparent data-[active=false]:text-white data-[active=false]:hover:text-auth-brand-hover lg:px-6"
+                      type="button" role="tab" aria-selected="false" data-active="false" data-recover-tab="apple">
+                      Apple
+                    </button>
+                  </div>
+                </div>
+
+                <div class="mt-10" data-recover-panel="credit-card" role="tabpanel">
+                  <p class="text-sm leading-normal text-white">
+                    If you paid using a credit card you can find the payment token in your bank statement. It should
+                    have the format VPN*xxxxxxxxxx but might look different depending on your bank. VPN* is not part of
+                    the payment token.
+                  </p>
+                  <form class="mt-10 flex flex-col gap-3 lg:w-fit lg:flex-row lg:items-center"
+                    data-recover-form>
+                    <input
+                      class="h-11 w-full rounded-lg border border-transparent bg-auth-bg-secondary px-5 text-sm leading-normal text-white outline-none transition-[background-color,border-color] placeholder:text-auth-secondary hover:border-white/10 focus:border-auth-brand disabled:cursor-not-allowed disabled:bg-auth-input-muted disabled:text-white/30 lg:w-[240px]"
+                      type="text" placeholder="Please Enter a Payment Token" />
+                    <button
+                      class="inline-flex h-11 w-full cursor-pointer items-center justify-center gap-2 overflow-hidden rounded-lg bg-auth-brand px-6 text-sm font-semibold leading-normal text-white transition-[background-color,width,color] duration-200 hover:bg-auth-brand-hover active:bg-auth-brand-pressed disabled:cursor-not-allowed disabled:bg-auth-brand-inactive disabled:text-white/30 data-[loading=true]:w-[68px] data-[loading=true]:bg-auth-brand data-[loading=true]:px-0 data-[loading=true]:text-white lg:w-[138px]"
+                      type="submit" data-recover-find>
+                      <span data-button-text>Find Account</span>
+                      <img class="hidden size-5 animate-spin" src="./img/loading-icon.svg" width="20" height="20"
+                        alt="loading" aria-hidden="true" data-button-loader />
+                    </button>
+                  </form>
+                  <div class="mt-10 text-sm leading-normal text-white">
+                    <p>If you cannot find the payment token, send an email to <a
+                        class="text-auth-brand underline underline-offset-2 transition-colors hover:text-auth-brand-hover"
+                        href="mailto:support@web3.com">support@web3.com</a> with the following information:</p>
+                    <ul class="mt-1 list-disc pl-5">
+                      <li>The last four digits of your credit or debit card</li>
+                      <li>The expiry date of your credit or debit card</li>
+                      <li>The date, time (including time zone) at which you made the payment</li>
+                      <li>The amount that was paid</li>
+                    </ul>
+                  </div>
+                  <div
+                    class="mt-10 flex items-center gap-3 rounded-lg bg-auth-danger-button px-6 py-4 text-[13px] font-medium leading-tight text-white lg:mt-10">
+                    <svg class="size-5 shrink-0" viewBox="0 0 20 20" fill="none" aria-hidden="true"
+                      xmlns="http://www.w3.org/2000/svg">
+                      <path
+                        d="M10 18.3333C14.5833 18.3333 18.3333 14.5833 18.3333 10C18.3333 5.41667 14.5833 1.66667 10 1.66667C5.41667 1.66667 1.66667 5.41667 1.66667 10C1.66667 14.5833 5.41667 18.3333 10 18.3333Z"
+                        stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                      <path d="M10 6.66667V10.8333" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"
+                        stroke-linejoin="round" />
+                      <path d="M9.99542 13.3333H10.0029" stroke="currentColor" stroke-width="2"
+                        stroke-linecap="round" stroke-linejoin="round" />
+                    </svg>
+                    <p>Please note that accounts are only traceable for 20 days.</p>
+                  </div>
+                  <div
+                    class="mt-10 flex items-center gap-3 rounded-lg bg-auth-info px-6 py-4 text-[13px] font-medium leading-tight text-white">
+                    <svg class="size-5 shrink-0" viewBox="0 0 20 20" fill="none" aria-hidden="true"
+                      xmlns="http://www.w3.org/2000/svg">
+                      <path
+                        d="M10 18.3333C14.5833 18.3333 18.3333 14.5833 18.3333 10C18.3333 5.41667 14.5833 1.66667 10 1.66667C5.41667 1.66667 1.66667 5.41667 1.66667 10C1.66667 14.5833 5.41667 18.3333 10 18.3333Z"
+                        stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                      <path d="M10 13.3333V9.16667" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"
+                        stroke-linejoin="round" />
+                      <path d="M9.99542 6.66667H10.0029" stroke="currentColor" stroke-width="2"
+                        stroke-linecap="round" stroke-linejoin="round" />
+                    </svg>
+                    <p>If you email us to help resolve a lost account number, you will end up disclosing information
+                      about yourself to us (at a bare minimum, your email). If you prefer to remain anonymous, you can
+                      instead create a new account.</p>
+                  </div>
+                </div>
+
+                <div class="mt-10" data-recover-panel="paypal" role="tabpanel" hidden>
+                  <h3 class="text-xl font-medium leading-tight text-auth-secondary">Single Payment</h3>
+                  <p class="mt-5 text-sm leading-normal text-white">
+                    Your payment token is the same as the Invoice ID which can be found in your <a
+                      class="text-auth-brand underline underline-offset-2 transition-colors hover:text-auth-brand-hover"
+                      href="#">PayPal transaction history</a>.
+                  </p>
+                  <form class="mt-10 flex flex-col gap-3 lg:w-fit lg:flex-row lg:items-center"
+                    data-recover-form>
+                    <input
+                      class="h-11 w-full rounded-lg border border-transparent bg-auth-bg-secondary px-5 text-sm leading-normal text-white outline-none transition-[background-color,border-color] placeholder:text-auth-secondary hover:border-white/10 focus:border-auth-brand disabled:cursor-not-allowed disabled:bg-auth-input-muted disabled:text-white/30 lg:w-[240px]"
+                      type="text" placeholder="Please Enter a Payment Token" />
+                    <button
+                      class="inline-flex h-11 w-full cursor-pointer items-center justify-center gap-2 overflow-hidden rounded-lg bg-auth-brand px-6 text-sm font-semibold leading-normal text-white transition-[background-color,width,color] duration-200 hover:bg-auth-brand-hover active:bg-auth-brand-pressed disabled:cursor-not-allowed disabled:bg-auth-brand-inactive disabled:text-white/30 data-[loading=true]:w-[68px] data-[loading=true]:bg-auth-brand data-[loading=true]:px-0 data-[loading=true]:text-white lg:w-[138px]"
+                      type="submit" data-recover-find>
+                      <span data-button-text>Find Account</span>
+                      <img class="hidden size-5 animate-spin" src="./img/loading-icon.svg" width="20" height="20"
+                        alt="loading" aria-hidden="true" data-button-loader />
+                    </button>
+                  </form>
+                  <div
+                    class="mt-10 flex items-center gap-3 rounded-lg bg-auth-danger-button px-6 py-4 text-[13px] font-medium leading-tight text-white lg:mt-10"
+                    data-recover-red-alert></div>
+                  <div
+                    class="mt-10 flex items-center gap-3 rounded-lg bg-auth-info px-6 py-4 text-[13px] font-medium leading-tight text-white"
+                    data-recover-info-alert></div>
+                </div>
+
+                <div class="mt-10" data-recover-panel="swish" role="tabpanel" hidden>
+                  <p class="text-sm leading-normal text-white">
+                    If you paid with Swish, your payment token is the same as your Order ID which you can find on the
+                    payment entry under History.
+                  </p>
+                  <form class="mt-10 flex flex-col gap-3 lg:w-fit lg:flex-row lg:items-center"
+                    data-recover-form>
+                    <input
+                      class="h-11 w-full rounded-lg border border-transparent bg-auth-bg-secondary px-5 text-sm leading-normal text-white outline-none transition-[background-color,border-color] placeholder:text-auth-secondary hover:border-white/10 focus:border-auth-brand disabled:cursor-not-allowed disabled:bg-auth-input-muted disabled:text-white/30 lg:w-[240px]"
+                      type="text" placeholder="Please Enter a Payment Token" />
+                    <button
+                      class="inline-flex h-11 w-full cursor-pointer items-center justify-center gap-2 overflow-hidden rounded-lg bg-auth-brand px-6 text-sm font-semibold leading-normal text-white transition-[background-color,width,color] duration-200 hover:bg-auth-brand-hover active:bg-auth-brand-pressed disabled:cursor-not-allowed disabled:bg-auth-brand-inactive disabled:text-white/30 data-[loading=true]:w-[68px] data-[loading=true]:bg-auth-brand data-[loading=true]:px-0 data-[loading=true]:text-white lg:w-[138px]"
+                      type="submit" data-recover-find>
+                      <span data-button-text>Find Account</span>
+                      <img class="hidden size-5 animate-spin" src="./img/loading-icon.svg" width="20" height="20"
+                        alt="loading" aria-hidden="true" data-button-loader />
+                    </button>
+                  </form>
+                  <div class="mt-10 text-sm leading-normal text-white">
+                    <p>If you cannot find the payment token, send an email to <a
+                        class="text-auth-brand underline underline-offset-2 transition-colors hover:text-auth-brand-hover"
+                        href="mailto:support@web3.com">support@web3.com</a> with the following information:</p>
+                    <ul class="mt-1 list-disc pl-5">
+                      <li>The date and time of the payment</li>
+                      <li>The paid amount</li>
+                      <li>The first eight characters of the Reference number, or your phone number.</li>
+                    </ul>
+                  </div>
+                  <div
+                    class="mt-10 flex items-center gap-3 rounded-lg bg-auth-danger-button px-6 py-4 text-[13px] font-medium leading-tight text-white lg:mt-10"
+                    data-recover-red-alert></div>
+                  <div
+                    class="mt-10 flex items-center gap-3 rounded-lg bg-auth-info px-6 py-4 text-[13px] font-medium leading-tight text-white"
+                    data-recover-info-alert></div>
+                </div>
+
+                <div class="mt-10" data-recover-panel="voucher" role="tabpanel" hidden>
+                  <p class="text-sm leading-normal text-white">
+                    For a voucher payment the voucher code itself is the payment token.
+                  </p>
+                  <form class="mt-10 flex flex-col gap-3 lg:w-fit lg:flex-row lg:items-center"
+                    data-recover-form>
+                    <input
+                      class="h-11 w-full rounded-lg border border-transparent bg-auth-bg-secondary px-5 text-sm leading-normal text-white outline-none transition-[background-color,border-color] placeholder:text-auth-secondary hover:border-white/10 focus:border-auth-brand disabled:cursor-not-allowed disabled:bg-auth-input-muted disabled:text-white/30 lg:w-[240px]"
+                      type="text" placeholder="Please Enter a Payment Token" />
+                    <button
+                      class="inline-flex h-11 w-full cursor-pointer items-center justify-center gap-2 overflow-hidden rounded-lg bg-auth-brand px-6 text-sm font-semibold leading-normal text-white transition-[background-color,width,color] duration-200 hover:bg-auth-brand-hover active:bg-auth-brand-pressed disabled:cursor-not-allowed disabled:bg-auth-brand-inactive disabled:text-white/30 data-[loading=true]:w-[68px] data-[loading=true]:bg-auth-brand data-[loading=true]:px-0 data-[loading=true]:text-white lg:w-[138px]"
+                      type="submit" data-recover-find>
+                      <span data-button-text>Find Account</span>
+                      <img class="hidden size-5 animate-spin" src="./img/loading-icon.svg" width="20" height="20"
+                        alt="loading" aria-hidden="true" data-button-loader />
+                    </button>
+                  </form>
+                  <div
+                    class="mt-10 flex items-center gap-3 rounded-lg bg-auth-danger-button px-6 py-4 text-[13px] font-medium leading-tight text-white lg:mt-10"
+                    data-recover-red-alert></div>
+                  <div
+                    class="mt-10 flex items-center gap-3 rounded-lg bg-auth-info px-6 py-4 text-[13px] font-medium leading-tight text-white"
+                    data-recover-info-alert></div>
+                </div>
+
+                <div class="mt-10" data-recover-panel="cash" role="tabpanel" hidden>
+                  <div class="text-sm leading-normal text-white">
+                    <p>Since we shred the envelopes shortly after receiving them we will only be able to recover your
+                      account using a very recent payment. To help us find the correct payment envelope, send an email
+                      to <a
+                        class="text-auth-brand underline underline-offset-2 transition-colors hover:text-auth-brand-hover"
+                        href="mailto:support@web3.com">support@web3.com</a> with as many of the following details as
+                      possible:</p>
+                    <ul class="mt-10 list-disc pl-5">
+                      <li>What the envelope looks like</li>
+                      <li>The postage date on envelope</li>
+                      <li>The location from which it was sent</li>
+                      <li>The amount that it contained</li>
+                    </ul>
+                  </div>
+                  <div
+                    class="mt-10 flex items-center gap-3 rounded-lg bg-auth-danger-button px-6 py-4 text-[13px] font-medium leading-tight text-white lg:mt-10"
+                    data-recover-red-alert></div>
+                  <div
+                    class="mt-10 flex items-center gap-3 rounded-lg bg-auth-info px-6 py-4 text-[13px] font-medium leading-tight text-white"
+                    data-recover-info-alert></div>
+                </div>
+
+                <div class="mt-10" data-recover-panel="bank-wire" role="tabpanel" hidden>
+                  <div class="text-sm leading-normal text-white">
+                    <p>To recover an account paid for with a bank transaction, send an email to <a
+                        class="text-auth-brand underline underline-offset-2 transition-colors hover:text-auth-brand-hover"
+                        href="mailto:support@web3.com">support@web3.com</a> with the following information:</p>
+                    <ul class="mt-10 list-disc pl-5">
+                      <li>The date of the transaction</li>
+                      <li>The amount of the transaction</li>
+                      <li>The bank from which it was sent, or your name</li>
+                    </ul>
+                  </div>
+                  <div
+                    class="mt-10 flex items-center gap-3 rounded-lg bg-auth-danger-button px-6 py-4 text-[13px] font-medium leading-tight text-white lg:mt-10"
+                    data-recover-red-alert></div>
+                  <div
+                    class="mt-10 flex items-center gap-3 rounded-lg bg-auth-info px-6 py-4 text-[13px] font-medium leading-tight text-white"
+                    data-recover-info-alert></div>
+                </div>
+
+                <div class="mt-10" data-recover-panel="apple" role="tabpanel" hidden>
+                  <p class="text-sm leading-normal text-white">
+                    We are not able to recover a lost account if you paid through the Apple App Store.
+                  </p>
+                  <div
+                    class="mt-10 flex items-center gap-3 rounded-lg bg-auth-info px-6 py-4 text-[13px] font-medium leading-tight text-white lg:mt-10"
+                    data-recover-info-alert></div>
+                </div>
+              </section>
         </div>
       </section>
     </main>
@@ -261,19 +486,19 @@
           <h2 class="text-base font-semibold uppercase leading-normal text-auth-secondary">Policies</h2>
           <nav class="flex flex-col gap-3 text-sm font-medium text-white items-center lg:items-start"
             aria-label="Policies">
-            <a class="inline-flex w-fit items-center justify-center transition-colors duration-200 hover:text-auth-brand-hover active:text-auth-brand-pressed data-[loading=true]:text-white"
+            <a class="inline-flex w-fit items-center justify-center transition-colors duration-200 hover:text-auth-brand-hover active:text-auth-brand-pressed data-[loading=true]:text-auth-brand"
               href="#" data-demo-loading>
               <span data-link-text>Policies</span>
             </a>
-            <a class="inline-flex w-fit items-center justify-center transition-colors duration-200 hover:text-auth-brand-hover active:text-auth-brand-pressed data-[loading=true]:text-white"
+            <a class="inline-flex w-fit items-center justify-center transition-colors duration-200 hover:text-auth-brand-hover active:text-auth-brand-pressed data-[loading=true]:text-auth-brand"
               href="#" data-demo-loading>
               <span data-link-text>Privacy Policy</span>
             </a>
-            <a class="inline-flex w-fit items-center justify-center transition-colors duration-200 hover:text-auth-brand-hover active:text-auth-brand-pressed data-[loading=true]:text-white"
+            <a class="inline-flex w-fit items-center justify-center transition-colors duration-200 hover:text-auth-brand-hover active:text-auth-brand-pressed data-[loading=true]:text-auth-brand"
               href="#" data-demo-loading>
               <span data-link-text>Cookies</span>
             </a>
-            <a class="inline-flex w-fit items-center justify-center transition-colors duration-200 hover:text-auth-brand-hover active:text-auth-brand-pressed data-[loading=true]:text-white"
+            <a class="inline-flex w-fit items-center justify-center transition-colors duration-200 hover:text-auth-brand-hover active:text-auth-brand-pressed data-[loading=true]:text-auth-brand"
               href="#" data-demo-loading>
               <span data-link-text>Terms Of Service</span>
             </a>
@@ -288,7 +513,7 @@
               Springfield, IL 62704<br />
               United States
             </address>
-            <a class="flex items-center justify-center gap-2 normal-case transition-colors hover:text-auth-brand-hover active:text-auth-brand lg:justify-start"
+            <a class="flex items-center justify-center gap-2 normal-case transition-colors hover:text-auth-brand-hover active:text-auth-brand-pressed lg:justify-start"
               href="#">
               <svg class="size-4" viewBox="0 0 16 16" fill="none" aria-hidden="true" xmlns="http://www.w3.org/2000/svg">
                 <path

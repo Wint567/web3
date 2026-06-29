@@ -5,6 +5,7 @@
   "scripts": {
     "build": "tailwindcss -i ./src/css/input.css -o ./src/css/output.css --minify",
     "dev": "tailwindcss -i ./src/css/input.css -o ./src/css/output.css --watch",
+    "sync:layout": "node ./scripts/sync-shared-layout.js",
     "verify:render": "node ./scripts/verify-render.js"
   },
   "dependencies": {

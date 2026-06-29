@@ -2,25 +2,12 @@
   const page = document.querySelector("[data-add-time-page]");
   if (!page) return;
 
-  const wait = () => window.Web3UI?.wait?.(800, 1200) || new Promise((resolve) => {
-    window.setTimeout(resolve, 800 + Math.round(Math.random() * 400));
-  });
-
-  const setLoading = (control, isLoading) => {
-    window.Web3UI?.setLoading?.(control, isLoading);
-
-    if (control instanceof HTMLButtonElement) {
-      control.disabled = isLoading;
-    }
-  };
-
   const runWithLoading = async (control, callback) => {
     if (!control || control.dataset.loading === "true") return;
 
-    setLoading(control, true);
-    await wait();
-    setLoading(control, false);
-    callback?.();
+    if (window.Web3UI?.runWithLoading) {
+      await window.Web3UI.runWithLoading(control, callback, { min: 800, max: 1200 });
+    }
   };
 
   document.querySelectorAll("[data-addtime-payment-link]").forEach((link) => {
@@ -28,9 +15,9 @@
       event.preventDefault();
       if (link.dataset.loading === "true") return;
 
-      window.Web3UI?.setLoading?.(link, true);
-      await wait();
-      window.location.href = link.href;
+      await runWithLoading(link, () => {
+        window.location.href = link.href;
+      });
     });
   });
 

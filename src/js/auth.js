@@ -1,41 +1,14 @@
 (function () {
   const generatedAccountNumber = "2345 6567 7890 9090";
   const normalizeAccount = (value) => value.replace(/\s+/g, "").trim();
-  const wait = () => window.Web3UI?.wait?.(800, 1200) || new Promise((resolve) => {
-    window.setTimeout(resolve, 800 + Math.round(Math.random() * 400));
-  });
 
   const goToAccountPage = () => {
     window.location.href = "./add-time/index.html";
   };
 
-  const setButtonLoading = (button, isLoading) => {
-    if (!button) return;
-    if (window.Web3UI?.setLoading) {
-      window.Web3UI.setLoading(button, isLoading);
-      return;
-    }
-
-    const label = button.querySelector("[data-button-text]");
-    const loader = button.querySelector("[data-button-loader]");
-
-    if (isLoading) {
-      button.dataset.loading = "true";
-    } else {
-      delete button.dataset.loading;
-    }
-
-    button.classList.toggle("pointer-events-none", isLoading);
-    button.disabled = button.dataset.locked === "true";
-    button.setAttribute("aria-busy", String(isLoading));
-    button.setAttribute("aria-disabled", String(isLoading || button.disabled));
-
-    if (label) {
-      label.classList.toggle("hidden", isLoading);
-    }
-    if (loader) {
-      loader.classList.toggle("hidden", !isLoading);
-    }
+  const runButtonLoading = (button, callback) => {
+    if (!button || button.dataset.loading === "true") return false;
+    return window.Web3UI?.runWithLoading?.(button, callback, { min: 800, max: 1200 });
   };
 
   const setFieldError = (input, message) => {
@@ -78,22 +51,14 @@
       return;
     }
 
-    setButtonLoading(loginButton, true);
-    await wait();
-    setButtonLoading(loginButton, false);
-    goToAccountPage();
+    await runButtonLoading(loginButton, goToAccountPage);
   });
 
   qrButton?.addEventListener("click", async () => {
-    if (qrButton.dataset.loading === "true") {
-      return;
-    }
-
-    setButtonLoading(qrButton, true);
-    await wait();
-    setButtonLoading(qrButton, false);
-    qrButton.hidden = true;
-    qrPanel.hidden = false;
+    await runButtonLoading(qrButton, () => {
+      qrButton.hidden = true;
+      qrPanel.hidden = false;
+    });
   });
 
   const registerForm = document.querySelector("[data-register-form]");
@@ -148,65 +113,49 @@
       return;
     }
 
-    setButtonLoading(registerButton, true);
-    await wait();
-    setButtonLoading(registerButton, false);
-    goToAccountPage();
+    await runButtonLoading(registerButton, goToAccountPage);
   });
 
   copyButton?.addEventListener("click", async () => {
-    if (copyButton.dataset.loading === "true") {
-      return;
-    }
-
     const label = copyButton.querySelector("[data-button-text]");
     const previous = label?.textContent || "Copy";
 
-    setButtonLoading(copyButton, true);
+    await runButtonLoading(copyButton, async () => {
+      try {
+        await navigator.clipboard.writeText(generatedAccountNumber);
+      } catch {
+        const fallback = document.createElement("textarea");
+        fallback.value = generatedAccountNumber;
+        fallback.setAttribute("readonly", "");
+        fallback.style.position = "fixed";
+        fallback.style.opacity = "0";
+        document.body.appendChild(fallback);
+        fallback.select();
+        document.execCommand("copy");
+        fallback.remove();
+      }
 
-    try {
-      await navigator.clipboard.writeText(generatedAccountNumber);
-    } catch {
-      const fallback = document.createElement("textarea");
-      fallback.value = generatedAccountNumber;
-      fallback.setAttribute("readonly", "");
-      fallback.style.position = "fixed";
-      fallback.style.opacity = "0";
-      document.body.appendChild(fallback);
-      fallback.select();
-      document.execCommand("copy");
-      fallback.remove();
-    }
-
-    await wait();
-    setButtonLoading(copyButton, false);
-
-    if (label) {
-      label.textContent = "Copied";
-      window.setTimeout(() => {
-        label.textContent = previous;
-      }, 1200);
-    }
+      if (label) {
+        label.textContent = "Copied";
+        window.setTimeout(() => {
+          label.textContent = previous;
+        }, 1200);
+      }
+    });
   });
 
   downloadButton?.addEventListener("click", async () => {
-    if (downloadButton.dataset.loading === "true") {
-      return;
-    }
-
-    setButtonLoading(downloadButton, true);
-    await wait();
-
-    const blob = new Blob([`${generatedAccountNumber}\n`], { type: "text/plain" });
-    const url = URL.createObjectURL(blob);
-    const link = document.createElement("a");
-    link.href = url;
-    link.download = "web3-vpn-account-number.txt";
-    document.body.appendChild(link);
-    link.click();
-    link.remove();
-    URL.revokeObjectURL(url);
-    setButtonLoading(downloadButton, false);
+    await runButtonLoading(downloadButton, () => {
+      const blob = new Blob([`${generatedAccountNumber}\n`], { type: "text/plain" });
+      const url = URL.createObjectURL(blob);
+      const link = document.createElement("a");
+      link.href = url;
+      link.download = "web3-vpn-account-number.txt";
+      document.body.appendChild(link);
+      link.click();
+      link.remove();
+      URL.revokeObjectURL(url);
+    });
   });
 
   updateRegisterState();
