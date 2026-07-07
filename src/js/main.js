@@ -173,6 +173,29 @@
     });
   });
 
+  document.querySelectorAll("[data-cookie-dismiss]").forEach((control) => {
+    control.addEventListener("click", () => {
+      const banner = control.closest("[data-cookie-banner]");
+      if (!banner || banner.dataset.state === "closing") return;
+
+      banner.dataset.state = "closing";
+
+      const hideBanner = () => {
+        banner.removeEventListener("transitionend", handleTransitionEnd);
+        banner.hidden = true;
+      };
+
+      const handleTransitionEnd = (event) => {
+        if (event.target === banner && event.propertyName === "opacity") {
+          hideBanner();
+        }
+      };
+
+      banner.addEventListener("transitionend", handleTransitionEnd);
+      window.setTimeout(hideBanner, 600);
+    });
+  });
+
   document.querySelectorAll('a[href="#"]').forEach((link) => {
     link.addEventListener("click", (event) => {
       event.preventDefault();
